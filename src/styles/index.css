@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --text: #1f1f1f;
+  --background: #dae2e2;
+  --primary: #1e1610;
+  --secondary: #cbc1b4;
+  --accent: #815128;
+
+  margin: 0;
+}
+
+:root[data-theme="dark"] {
+  --text: #e0e0e0;
+  --background: #1d2525;
+  --primary: #efe7e1;
+  --secondary: #4b4134;
+  --accent: #d7a87e;
+}
+
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.dm-serif-display-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-display-semibold {
+  font-family: "DM Serif Display", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.dm-serif-display-bold {
+  font-family: "DM Serif Display", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
