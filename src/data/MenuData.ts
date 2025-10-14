@@ -5,6 +5,7 @@ export type MenuItem = {
     additionalPrice?: number;
     additionalDetails?: string;
     description?: string;
+    variants?: string[];
     onClick?: () => void;
 };
 
@@ -16,14 +17,14 @@ const MenuData: MenuDataType = {
         "Appetizers": {
             "description": "Start your meal with our crispy, savory, and shareable appetizers — perfect for pairing with drinks or as a light bite.",
             "items": [
-                { name: "French Fries", price: 120.00, additionalPrice: 130.00, additionalDetails: "+10.00 | Sour Cream / BBQ / Cheese" },
-                { name: "Mojos", price: 120.00, additionalPrice: 130.00, additionalDetails: "+10.00 | Sour Cream / BBQ / Cheese" },
+                { name: "French Fries", price: 120.00, additionalPrice: 130.00, variants: ["Sour Cream", "BBQ", "Cheese"] },
+                { name: "Mojos", price: 120.00, additionalPrice: 130.00, variants: ["Sour Cream", "BBQ", "Cheese"] },
                 { name: "Street Food Platter", price: 120.00 },
                 { name: "Cheese Sticks", price: 120.00 },
                 { name: "Lumpia Shanghai", price: 120.00 },
                 { name: "Chicken Skin", price: 200.00 },
                 { name: "Nachos", price: 200.00 },
-                { name: "Siomai", price: 100.00, additionalDetails: "Steamed / Fried - 12 pcs." },
+                { name: "Siomai (12 pcs.)", price: 100.00, variants: ["Steamed", "Fried"] },
             ]
         },
         "Guisarap!": {

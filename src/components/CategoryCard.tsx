@@ -12,8 +12,8 @@ const CategoryCard: React.FC<CardProps> = ({ text, iconSrc, onClick }) => {
 
     return (
         <button onClick={onClick} className="flex flex-col justify-center items-center gap-y-2 py-20 max-h-56 rounded-lg bg-[var(--primary)] transition duration-300 ease-in-out hover:bg-[var(--accent)] hover:translate-y-[-3px] cursor-pointer">
-            <h2 className="font-semibold leading-none text-[var(--background)]">{text}</h2>
             <img src={iconSrc} className=""/>
+            <h2 className="font-semibold leading-none text-[var(--background)]">{text}</h2>
         </button>
     );
 };
