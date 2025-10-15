@@ -5,6 +5,7 @@ export type MenuItem = {
     additionalPrice?: number;
     additionalDetails?: string[];
     description?: string;
+    quantity?: string;
     variants?: string[];
     onClick?: () => void;
 };
@@ -24,7 +25,7 @@ const MenuData: MenuDataType = {
                 { name: "Lumpia Shanghai", price: 120.00 },
                 { name: "Chicken Skin", price: 200.00 },
                 { name: "Nachos", price: 200.00 },
-                { name: "Siomai (12 pcs.)", price: 100.00, variants: ["Steamed", "Fried"] },
+                { name: "Siomai", price: 100.00, quantity: "12 pcs.", variants: ["Steamed", "Fried"] },
             ]
         },
         "Guisarap!": {
@@ -111,29 +112,29 @@ const MenuData: MenuDataType = {
         "Alcohol Avenue": {
             "description": "A curated list of liquors and spirits to lift your mood and get the party going.",
             "items": [
-                {name: "Jinro Soju Grapefruit ( 360 mL )", price: 195.00 },
+                {name: "Jinro Soju Grapefruit", price: 195.00, quantity: "360 mL" },
                 {name: "Clvb Emperador", price: 350.00 },
                 {name: "Charles & James", price: 500.00 },
-                {name: "Andy Player ( 2 bottles )", price: 500.00 },
-                {name: "Primera ( 1L )", price: 500.00 },
-                {name: "Alhambra Solera Light ( 1L )", price: 650.00 },
-                {name: "Alfonzo Light ( 1L )", price: 650.00 },
-                {name: "Fundador Super Special", price: 700.00 },
+                {name: "Andy Player", price: 500.00, quantity: "2 bottles" },
+                {name: "Primera", price: 500.00 },
+                {name: "Alhambra Solera Light", price: 650.00, quantity: "1L" },
+                {name: "Alfonzo Light", price: 650.00, quantity: "1L" },
+                {name: "Fundador Super Special", price: 700.00, quantity: "1L" },
                 {name: "Carlos I Light", price: 780.00 },
                 {name: "Fundador Lights", price: 750.00 },
                 {name: "Smirnoff Vodka", price: 1060.00 },
-                {name: "Absolut Vodka ( 700 mL )", price: 1198.00 },
+                {name: "Absolut Vodka", price: 1198.00, quantity: "700 mL" },
                 {name: "Bacardi White Rhum", price: 1260.00 },
-                {name: "Jose Cuervo Tequila ( 700 mL / 1L )", price: 1900.00, additionalPrice: 2300.00 },
-                {name: "Jim Beam ( 1L )", price: 1880.00 },
+                {name: "Jose Cuervo Tequila", price: 1900.00, additionalPrice: 2300.00, additionalDetails: ["700 mL", "1L"] },
+                {name: "Jim Beam", price: 1880.00, quantity: "1L" },
                 {name: "Johnny Walker Red Label", price: 1550.00 },
                 {name: "Johnny Walker Black Label", price: 2400.00 },
                 {name: "Johnny Walker Double Black", price: 3500.00 },
-                {name: "Chivais Regal ( 700 mL )", price: 2130.00 },
-                {name: "Jack Daniel Whiskey ( 700 mL )", price: 2250.00 },
-                {name: "Tanduay Light ( 1 bottle / 2 bottles )", price: 300.00, additionalPrice: 550.00 },
-                {name: "Tanduay Select ( 1 bottle / 2 bottles )", price: 350.00, additionalPrice: 600.00 },
-                {name: "Tanduay Flavored ( 1 bottle / 2 bottles )", price: 280.00, additionalPrice: 500.00 },
+                {name: "Chivais Regal", price: 2130.00, quantity: "700 mL" },
+                {name: "Jack Daniel Whiskey", price: 2250.00, quantity: "700 mL" },
+                {name: "Tanduay Light", price: 300.00, additionalPrice: 550.00, additionalDetails: ["1 bottle", "2 bottles"] },
+                {name: "Tanduay Select", price: 350.00, additionalPrice: 600.00, additionalDetails: ["1 bottle", "2 bottles"] },
+                {name: "Tanduay Flavored", price: 280.00, additionalPrice: 500.00, additionalDetails: ["1 bottle", "2 bottles"] },
             ]
         },
         "Bottle/Bucket": {
@@ -145,19 +146,19 @@ const MenuData: MenuDataType = {
                 {name: "Stallion", price: 80.00, additionalPrice: 475.00, additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"] },
                 {name: "Tanduay Ice - Mix", price: 75.00, additionalPrice: 420.00, additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"] },
                 {name: "Mule Smirnoff", price: 100.00, additionalPrice: 575.00, additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"] },
-                {name: "RH - 500 mL", price: 100.00, additionalPrice: 575.00, additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"] },
-                {name: "RH - 1L", price: 190.00, },
+                {name: "RH", price: 100.00, additionalPrice: 575.00, additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"], quantity: "500 mL" },
+                {name: "RH", price: 190.00, quantity: "1L" },
                 {name: "San Mig Flavored Mix", price: 110.00, additionalPrice: 630.00 },
             ]
         },
         "Shakes": {
             "description": "Sweet, cold, and creamy — the perfect refresher to beat the heat.",
             "items": [
-                {name: "Cucumber", price: 100.00 },
-                {name: "Mango", price: 100.00 },
-                {name: "Mango Graham", price: 100.00 },
-                {name: "Strawberry", price: 100.00 },
-                {name: "Cookies 'n Cream", price: 100.00 },
+                {name: "Cucumber Shake", price: 100.00 },
+                {name: "Mango Shake", price: 100.00 },
+                {name: "Mango Graham Shake", price: 100.00 },
+                {name: "Strawberry Shake", price: 100.00 },
+                {name: "Cookies 'n Cream Shake", price: 100.00 },
             ]
         },
         "Softdrinks": {
@@ -166,8 +167,8 @@ const MenuData: MenuDataType = {
                 {name: "Royal Sakto", price: 20.00 },
                 {name: "Sprite Sakto", price: 20.00 },
                 {name: "Coke Sakto", price: 20.00 },
-                {name: "Coke ( 1L )", price: 125.00 },
-                {name: "Coke ( 1.5L )", price: 160.00 },
+                {name: "Coke", price: 125.00, quantity: "1L" },
+                {name: "Coke", price: 160.00, quantity: "1.5L" },
             ]
         },
         "Everyday Refreshments": {

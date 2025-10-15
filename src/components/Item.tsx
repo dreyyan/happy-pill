@@ -11,15 +11,15 @@ const Item: React.FC<MenuItem> = ({ name, imgSrc, price, additionalPrice, additi
                 <p className="font-semibold leading-none text-[var(--background)]">{description}</p>
                 {/* Details /w Prices */}
                 <div className="leading-none space-y-1 flex flex-col [&>div>p]:text-[var(--background)]">
-                    <div className="flex justify-between items-center">
-                        <p className="text-xs">{additionalDetails?.[0]}</p>
+                    <div className={`flex ${additionalDetails !== undefined ? "justify-between" : "justify-center"} items-center`}>
+                        <p className="text-[10px]">{additionalDetails?.[0]}</p>
                         <p className="text-[12px] leading-none text-[var(--background)]">
                             {price.toFixed(2)}
                         </p>
                     </div>
 
                     <div className="flex justify-between items-center">
-                        <p className="text-[10px]">{additionalDetails?.[1]}</p>
+                        <p className="text-xs">{additionalDetails?.[1]}</p>
                         <p className="text-sm font-semibold leading-none text-[var(--background)]">
                             {additionalPrice ? "" : ""}
                             {additionalPrice?.toFixed(2)}

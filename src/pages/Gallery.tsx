@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import SecondaryButton from "../components/SecondaryButton";
 import Styles from "../styles/Styles";
 
-const AboutUs = () => {
+const Gallery = () => {
     const navigate = useNavigate();
 
     // Handles
@@ -15,4 +15,4 @@ return (
 	</div>
 	);
 };
-export default AboutUs;
+export default Gallery;

@@ -36,7 +36,9 @@ return (
         <div><Header/></div>
         {/* Back Button */}
         {selectedCategory &&
-            <button onClick={handleBackButton} className="fixed top-20 left-4 w-20 h-8 rounded-full border-2 border-[var(--primary)] dm-serif-display-bold px-4 text-[var(--background)] bg-[var(--accent)] transition duration-300 ease-in-out hover:translate-y-[-2px] cursor-pointer z-1">Back</button>
+            <button onClick={handleBackButton} className="fixed top-22 left-6 border-3 border-[var(--primary)] rounded-full bg-[var(--background)] text-md transition duration-300 ease-in-out hover:translate-x-[-2px] cursor-pointer z-1">
+                <img src="back-icon.svg" className="h-8"></img>
+            </button>
         }
         {/* Main Menu */}
         {!selectedSection && !selectedCategory &&
@@ -47,34 +49,40 @@ return (
         }
         {/* Select Section */}
         {selectedCategory && !selectedSection && (
-            <div className="grid grid-cols-2 auto-rows-fr flex-1 items-center gap-4 p-8 pt-16">
-                {Object.entries(MenuData[selectedCategory as keyof typeof MenuData]).map(
-                    ([sectionName, section]) => (
-                        <SectionCard
-                            key={sectionName}
-                            sectionName={sectionName}
-                            description={section.description || ""}
-                            onClick={() => setSelectedSection(sectionName)}
-                        />
-                    )
-                )}
+            <div className="pt-4">
+                <h2 className="flex font-bold justify-center text-[var(--text)]">{selectedCategory.toUpperCase()}</h2>
+                <div className="grid grid-cols-2 auto-rows-fr flex-1 items-center gap-4 p-8 pt-4">
+                    {Object.entries(MenuData[selectedCategory as keyof typeof MenuData]).map(
+                        ([sectionName, section]) => (
+                            <SectionCard
+                                key={sectionName}
+                                sectionName={sectionName}
+                                description={section.description || ""}
+                                onClick={() => setSelectedSection(sectionName)}
+                            />
+                        )
+                    )}
+                </div>
             </div>
         )}
         {/* Menu Items */}
         {section && (
-            <div className="grid grid-cols-2 auto-rows-fr flex-1 items-center gap-4 p-8 pt-16">
-                {section.items.map((item) => (
-                    <Item
-                        key={item.name}
-                        name={item.name}
-                        imgSrc={item.imgSrc || "happy-pill-banner.png"}
-                        price={item.price}
-                        additionalPrice={item.additionalPrice}
-                        additionalDetails={item.additionalDetails}
-                        description={item.description || ""}
-                        onClick={() => console.log(item.name)}
-                    />
-                ))}
+            <div className="pt-4">
+                <h2 className="flex font-bold justify-center text-[var(--text)]">{selectedSection.toUpperCase()}</h2>
+                <div className="grid grid-cols-2 auto-rows-fr flex-1 items-center gap-4 p-8 pt-4">
+                    {section.items.map((item) => (
+                        <Item
+                            key={item.name}
+                            name={item.name}
+                            imgSrc={item.imgSrc || "happy-pill-banner.png"}
+                            price={item.price}
+                            additionalPrice={item.additionalPrice}
+                            additionalDetails={item.additionalDetails}
+                            description={item.description || ""}
+                            onClick={() => console.log(item.name)}
+                        />
+                    ))}
+                </div>
             </div>
         )}
 	</div>

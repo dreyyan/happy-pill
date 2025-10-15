@@ -3,6 +3,11 @@ import Styles from "../styles/Styles";
 import SecondaryButton from "./SecondaryButton";
 
 const Header = () => {
+    // Handles
+    const handleContactUsButton = () => {
+        
+    };
+    
     return (
         <div className="flex flex-row bg-[var(--primary)] text-[var(--background)]">
             {/* Banner */}
@@ -14,7 +19,7 @@ const Header = () => {
                 <Link to="/menu" className={Styles.navigationLink}>Menu</Link>
                 <Link to="/gallery" className={Styles.navigationLink}>Gallery</Link>
                 <Link to="/about-us" className={Styles.navigationLink}>About Us</Link>
-                <SecondaryButton text="Contact Us"/>
+                <SecondaryButton text="Contact Us" onClick={() => window.open("https://www.facebook.com/profile.php?id=61555806119974")}/>
             </div>
         </div>
     );
