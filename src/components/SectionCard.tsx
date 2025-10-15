@@ -16,6 +16,7 @@ const SectionCard: React.FC<CardProps> = ({ sectionName, description, imgSrc, on
             <h4 className="font-bold leading-none text-[var(--background)]">{sectionName}</h4>
             <img src={imgSrc} className="hidden border border-[var(--background)] w-full h-10"/>
             <p className="text-xs leading-snug text-[var(--background)] max-w-[300px] break-words">{description}</p>
+            
         </button>
     );
 };

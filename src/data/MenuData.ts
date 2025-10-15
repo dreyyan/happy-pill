@@ -3,13 +3,13 @@ export type MenuItem = {
     imgSrc?: string;
     price: number;
     additionalPrice?: number;
-    additionalDetails?: string;
+    additionalDetails?: string[];
     description?: string;
     variants?: string[];
     onClick?: () => void;
 };
 
-type MenuSection = Record<string, { description?: string; items: MenuItem[] }>;
+type MenuSection = Record<string, { description?: string; imgSrc?: string; items: MenuItem[] }>;
 type MenuDataType = Record<string, MenuSection>;
 
 const MenuData: MenuDataType = {
@@ -17,8 +17,8 @@ const MenuData: MenuDataType = {
         "Appetizers": {
             "description": "Start your meal with our crispy, savory, and shareable appetizers — perfect for pairing with drinks or as a light bite.",
             "items": [
-                { name: "French Fries", price: 120.00, additionalPrice: 130.00, variants: ["Sour Cream", "BBQ", "Cheese"] },
-                { name: "Mojos", price: 120.00, additionalPrice: 130.00, variants: ["Sour Cream", "BBQ", "Cheese"] },
+                { name: "French Fries", price: 120.00, additionalPrice: 130.00, additionalDetails: ["No Flavor", "Sour Cream | BBQ | Cheese"], variants: ["Sour Cream", "BBQ", "Cheese"] },
+                { name: "Mojos", price: 120.00, additionalPrice: 130.00, additionalDetails: ["No Flavor", "Sour Cream | BBQ | Cheese"], variants: ["Sour Cream", "BBQ", "Cheese"] },
                 { name: "Street Food Platter", price: 120.00 },
                 { name: "Cheese Sticks", price: 120.00 },
                 { name: "Lumpia Shanghai", price: 120.00 },
@@ -102,10 +102,10 @@ const MenuData: MenuDataType = {
         "Happy Towers": {
             "description": "Big towers, bigger fun! Shareable cocktail towers perfect for barkada nights.",
             "items": [
-                {name: "Grapes", price: 400.00, additionalPrice: 600.00, additionalDetails: "1.5L / 3L" },
-                {name: "Strawberry", price: 400.00, additionalPrice: 600.00, additionalDetails: "1.5L / 3L" },
-                {name: "Dalandan", price: 400.00, additionalPrice: 600.00, additionalDetails: "1.5L / 3L" },
-                {name: "Pomelo", price: 400.00, additionalPrice: 600.00, additionalDetails: "1.5L / 3L" },
+                {name: "Grapes", price: 400.00, additionalPrice: 600.00, additionalDetails: ["1.5L", "3L"] },
+                {name: "Strawberry", price: 400.00, additionalPrice: 600.00, additionalDetails: ["1.5L", "3L"] },
+                {name: "Dalandan", price: 400.00, additionalPrice: 600.00, additionalDetails: ["1.5L", "3L"] },
+                {name: "Pomelo", price: 400.00, additionalPrice: 600.00, additionalDetails: ["1.5L", "3L"] },
             ]
         },
         "Alcohol Avenue": {
@@ -139,14 +139,14 @@ const MenuData: MenuDataType = {
         "Bottle/Bucket": {
             "description": "Grab a bottle or share a bucket — with bonus snacks to complete your chill night.",
             "items": [
-                {name: "San Mig Light ( 1 bottle / 1 bucket )", price: 80.00, additionalPrice: 475.00, additionalDetails: "5 + 1 bottle or French Fries, Lumpia, Siomai or Cheese Sticks" },
-                {name: "San Mig Apple ( 1 bottle / 1 bucket )", price: 80.00, additionalPrice: 475.00, additionalDetails: "5 + 1 bottle or French Fries, Lumpia, Siomai or Cheese Sticks" },
-                {name: "Pilsen ( 1 bottle / 1 bucket )", price: 80.00, additionalPrice: 475.00, additionalDetails: "5 + 1 bottle or French Fries, Lumpia, Siomai or Cheese Sticks" },
-                {name: "Stallion ( 1 bottle / 1 bucket )", price: 80.00, additionalPrice: 475.00, additionalDetails: "5 + 1 bottle or French Fries, Lumpia, Siomai or Cheese Sticks" },
-                {name: "Tanduay Ice - Mix ( 1 bottle / 1 bucket )", price: 75.00, additionalPrice: 420.00, additionalDetails: "5 + 1 bottle or French Fries, Lumpia, Siomai or Cheese Sticks" },
-                {name: "Mule Smirnoff ( 1 bottle / 1 bucket )", price: 100.00, additionalPrice: 575.00, additionalDetails: "5 + 1 bottle or French Fries, Lumpia, Siomai or Cheese Sticks" },
-                {name: "RH - 500 mL ( 1 bottle / 1 bucket )", price: 100.00, additionalPrice: 575.00, additionalDetails: "5 + 1 bottle or French Fries, Lumpia, Siomai or Cheese Sticks" },
-                {name: "RH - 1L ( 1 bottle / 1 bucket )", price: 190.00, additionalDetails: "5 + 1 bottle or French Fries, Lumpia, Siomai or Cheese Sticks" },
+                {name: "San Mig Light", price: 80.00, additionalPrice: 475.00, additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"] },
+                {name: "San Mig Apple", price: 80.00, additionalPrice: 475.00, additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"] },
+                {name: "Pilsen", price: 80.00, additionalPrice: 475.00, additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"] },
+                {name: "Stallion", price: 80.00, additionalPrice: 475.00, additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"] },
+                {name: "Tanduay Ice - Mix", price: 75.00, additionalPrice: 420.00, additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"] },
+                {name: "Mule Smirnoff", price: 100.00, additionalPrice: 575.00, additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"] },
+                {name: "RH - 500 mL", price: 100.00, additionalPrice: 575.00, additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"] },
+                {name: "RH - 1L", price: 190.00, },
                 {name: "San Mig Flavored Mix", price: 110.00, additionalPrice: 630.00 },
             ]
         },
