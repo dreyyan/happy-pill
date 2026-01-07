@@ -12,8 +12,8 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
   onClick,
   disabled = false,
   width,
-  fontSize = "16px",
-  borderRadius = "6px",
+  fontSize = "12px",
+  borderRadius = "0px",
 }) => {
   const style = { width, fontSize, borderRadius };
 
@@ -22,14 +22,12 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
       style={style}
       onClick={disabled ? undefined : onClick}
       className={`
-                cursor-pointer
-
                 flex justify-center items-center
 
                 px-4 py-1
 
-                text-[var(--background)]
-                border-[var(--background)]
+                text-[var(--text-primary)]
+                border-[var(--text-primary)]
                 hover:border-[var(--primary)]
                 hover:bg-[var(--background)]
                 hover:text-[var(--primary)]

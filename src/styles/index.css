@@ -1,51 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --text: #1f1f1f;
-  --background: #dae2e2;
-  --primary: #1e1610;
-  --secondary: #cbc1b4;
-  --accent: #815128;
+  --primary: #D4AF37;
+  --secondary: #F5C9A8;
+  --accent: #D4AF37;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #E0E0E0;
+  --background: #1C1C1E;
+
+  --card: #2D2D30;
+  --captions-icons: #A0A0A0;
 
   margin: 0;
 }
 
-:root[data-theme="dark"] {
-  --text: #e0e0e0;
-  --background: #1d2525;
-  --primary: #efe7e1;
-  --secondary: #4b4134;
-  --accent: #d7a87e;
+h1 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-size: 42px;
+
+  color: var(--text-primary)
 }
 
-.dm-serif-text-regular {
-  font-family: "DM Serif Text", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.dm-serif-text-regular-italic {
-  font-family: "DM Serif Text", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.dm-serif-display-regular {
-  font-family: "DM Serif Display", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.dm-serif-display-semibold {
-  font-family: "DM Serif Display", serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.dm-serif-display-bold {
-  font-family: "DM Serif Display", serif;
+h2 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
   font-weight: 700;
-  font-style: normal;
+  font-size: 36px;
+}
+
+h3 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+
+  color: var(--text-primary);
+}
+
+.caption {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.header-nav-link {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.header-nav-link-active {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 html, body {
@@ -53,24 +71,14 @@ html, body {
   width: 100%;
 
   background-color: var(--background);
-  
-  font-family: "DM Serif Text", serif;
 }
 
-/* Base: Mobile-first */
-h1 { font-size: 2rem; }     /* 32px */
-h2 { font-size: 1.75rem; }  /* 28px */
-h3 { font-size: 1.5rem; }   /* 24px */
-h4 { font-size: 1.25rem; }  /* 20px */
-h5 { font-size: 1.125rem; } /* 18px */
-h6 { font-size: 1rem; }     /* 16px */
-
-/* Larger screens */
-@media (min-width: 768px) {
-  h1 { font-size: 2.5rem; }  /* 40px */
-  h2 { font-size: 2rem; }    /* 32px */
-  h3 { font-size: 1.75rem; } /* 28px */
-  h4 { font-size: 1.5rem; }  /* 24px */
-  h5 { font-size: 1.25rem; } /* 20px */
-  h6 { font-size: 1rem; }    /* 16px */
+/* Hide Scrollbar */
+/* body {
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+} */
