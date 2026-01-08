@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import Styles from "../styles/Styles";
 import SecondaryButton from "./SecondaryButton";
 
 const Header = () => {
-    // Handles
-    const handleContactUsButton = () => {
-        
-    };
+    // States
+    const [open, setOpen] = useState(false);
     
     return (
         <div className="flex flex-row text-[var(--text-primary)]">
@@ -14,12 +13,52 @@ const Header = () => {
             <div className="sm:flex items-center hidden px-8">
                 <Link to="/home"><img src="happy-pill-banner.png" className="w-22 my-2"/></Link>
             </div>
-            {/* Navigation Links */}
-            <div className="flex justify-center items-center gap-x-4 w-full py-4 text-md header-nav-link">
+            {/* [MOBILE] Burger Menu */}
+            <div className="flex sm:hidden w-full px-4">
+                <button onClick={() => setOpen(prev => !prev)} className="ml-auto">
+                    <img src="burger-menu-icon.svg" alt="burger-menu-icon" className="w-8 h-8 mt-4 cursor-pointer ml-auto"/>
+                </button>
+            </div>
+            {/* [MOBILE] Navigation Links */}
+            {open && (
+            <div className="sm:hidden fixed top-0 left-0 w-full h-screen bg-black/90 z-50 flex flex-col justify-center items-center gap-y-6 text-md header-nav-link">
+                {/* CLOSE BUTTON */}
+                <button
+                onClick={() => setOpen(false)}
+                className="absolute top-4 right-5 text-2xl text-white cursor-pointer"
+                aria-label="Close menu"
+                >
+                ✕
+                </button>
+
+                <Link to="/home" className={Styles.navigationLink} onClick={() => setOpen(false)}>
+                HOME
+                </Link>
+                <Link to="/menu" className={Styles.navigationLink} onClick={() => setOpen(false)}>
+                MENU
+                </Link>
+                <Link to="/gallery" className={Styles.navigationLink} onClick={() => setOpen(false)}>
+                GALLERY
+                </Link>
+                <Link to="/about-us" className={Styles.navigationLink} onClick={() => setOpen(false)}>
+                ABOUT US
+                </Link>
+
+                <SecondaryButton
+                text="CONTACT / RESERVE"
+                onClick={() =>
+                    window.open("https://www.facebook.com/profile.php?id=61555806119974")
+                }
+                />
+            </div>
+            )}
+            {/* [DESKTOP] Navigation Links */}
+            <div className="hidden sm:flex justify-center items-center gap-x-4 w-full py-4 text-md header-nav-link">
+                <Link to="/home" className={Styles.navigationLink}>HOME</Link>
                 <Link to="/menu" className={Styles.navigationLink}>MENU</Link>
                 <Link to="/gallery" className={Styles.navigationLink}>GALLERY</Link>
                 <Link to="/about-us" className={Styles.navigationLink}>ABOUT US</Link>
-                <SecondaryButton text="CONTACT US" onClick={() => window.open("https://www.facebook.com/profile.php?id=61555806119974")}/>
+                <SecondaryButton text="CONTACT / RESERVE" onClick={() => window.open("https://www.facebook.com/profile.php?id=61555806119974")}/>
             </div>
         </div>
     );

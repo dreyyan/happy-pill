@@ -9,9 +9,8 @@ const AboutUs = () => {
     // Handles
 
 return (
-	<div className="">
-        {/* Header */}
-        <Header/>
+	<div className="min-h-screen flex flex-col px-[32px] py-[80px]">
+        <h1 className="text-center">ABOUT US</h1>
 	</div>
 	);
 };

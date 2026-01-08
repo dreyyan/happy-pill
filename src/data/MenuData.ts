@@ -17,6 +17,7 @@ const MenuData: MenuDataType = {
     Food: {
         "Appetizers": {
             "description": "Start your meal with our crispy, savory, and shareable appetizers — perfect for pairing with drinks or as a light bite.",
+            "imgSrc": "gallery/food/appetizers.png",
             "items": [
                 { name: "French Fries", price: 120.00, additionalPrice: 130.00, additionalDetails: ["No Flavor", "Sour Cream | BBQ | Cheese"], variants: ["Sour Cream", "BBQ", "Cheese"] },
                 { name: "Mojos", price: 120.00, additionalPrice: 130.00, additionalDetails: ["No Flavor", "Sour Cream | BBQ | Cheese"], variants: ["Sour Cream", "BBQ", "Cheese"] },
@@ -30,6 +31,7 @@ const MenuData: MenuDataType = {
         },
         "Guisarap!": {
             "description": "Classic Filipino noodle favorites cooked to perfection — perfect for any craving.",
+            "imgSrc": "gallery/food/guisarap.png",
             "items": [
             { name: "Bijon Guisado", price: 250.00 },
             { name: "Canton Guisado", price: 250.00 },
@@ -38,6 +40,7 @@ const MenuData: MenuDataType = {
         },
         "Chicken Classics": {
             "description": "All-time favorite chicken dishes, from spicy wings to buttered goodness.",
+            "imgSrc": "gallery/food/chicken-classics.png",
             "items": [
             { name: "Buffalo Wings", price: 250.00 },
             { name: "Buttered Chicken", price: 250.00 },
@@ -48,6 +51,7 @@ const MenuData: MenuDataType = {
         },
         "Pork Favorites": {
             "description": "Juicy and flavorful pork dishes that bring comfort with every bite.",
+            "imgSrc": "gallery/food/pork-favorites.png",
             "items": [
                 { name: "Lechon Kawali", price: 250.00 },
                 { name: "Pork Sisig", price: 250.00 },
@@ -57,6 +61,7 @@ const MenuData: MenuDataType = {
         },
         "Seafood Specials": {
             "description": "From crispy to sizzling — taste the freshness of the sea in every bite.",
+            "imgSrc": "gallery/food/seafood-specials.png",
             "items": [
                 { name: "Calamares", price: 200.00 },
                 { name: "Fish Fillet", price: 200.00 },
@@ -74,6 +79,7 @@ const MenuData: MenuDataType = {
         },
         "Budget Meals": {
             "description": "Delicious rice meals that won’t break the bank — perfect for solo cravings.",
+            "imgSrc": "gallery/food/budget-meals.png",
             "items": [
                 { name: "Calamares", price: 130.00 },
                 { name: "Chicken Skin", price: 130.00 },
@@ -92,6 +98,7 @@ const MenuData: MenuDataType = {
         },
         "Yum-Silog!": {
             "description": "The ultimate Filipino comfort meals — sunny-side up egg, garlic rice, and your favorite ulam!",
+            "imgSrc": "gallery/food/yumsilog.png",
             "items": [
                 { name: "Cornsilog", price: 120.00 },
                 { name: "Tocilog", price: 120.00 },

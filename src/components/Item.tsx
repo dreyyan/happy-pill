@@ -3,14 +3,14 @@ import type { MenuItem } from "../data/MenuData";
 
 const Item: React.FC<MenuItem> = ({ name, imgSrc, price, additionalPrice, additionalDetails, description, onClick, variants }) => {
     return (
-        <button onClick={onClick} className="flex flex-col justify-start items-start h-auto gap-y-1 max-h-56 rounded-lg bg-[var(--primary)] transition duration-300 ease-in-out hover:bg-[var(--accent)] hover:translate-y-[-3px] cursor-pointer">
+        <button onClick={onClick} className="flex flex-col justify-start items-start h-auto gap-y-1 max-h-56 rounded-lg bg-[var(--card)] transition duration-300 ease-in-out hover:bg-[var(--accent)] hover:translate-y-[-3px] cursor-pointer">
             <img src={imgSrc} className="w-full mx-auto rounded-t-lg bg-[var(--background)]"/>
             <div className="px-2 pt-1 space-y-2 w-full"> 
-                <h6 className="font-[600] leading-none text-[var(--background)]">{name}</h6>
+                <h6 className="font-[600] leading-none text-[var(--text-primary)]">{name}</h6>
                 {/* <p className="text-sm leading-none text-[var(--background)]">{additionalDetails}</p> */}
-                <p className="font-semibold leading-none text-[var(--background)]">{description}</p>
+                <p className="font-semibold leading-none text-[var(--text-primary)]">{description}</p>
                 {/* Details /w Prices */}
-                <div className="leading-none space-y-1 flex flex-col [&>div>p]:text-[var(--background)]">
+                <div className="leading-none space-y-1 flex flex-col [&>div>p]:text-[var(--text-primary)]">
                     <div className={`flex ${additionalDetails !== undefined ? "justify-between" : "justify-center"} items-center`}>
                         <p className="text-[10px]">{additionalDetails?.[0]}</p>
                         <p className="text-[12px] leading-none text-[var(--background)]">
