@@ -31,7 +31,6 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
                 text-[var(--text-primary)]
                 border-[var(--text-primary)]
                 hover:border-[var(--primary)]
-                hover:bg-[var(--background)]
                 hover:text-[var(--primary)]
                 border-2
 

@@ -11,6 +11,12 @@ const Footer = () => {
                     iconSrc="address-icon.svg"
                     title="Address"
                     description="G-Park Phase 2, Gaisano ICC, Benigno Aquino Avenue,  Brgy. San Rafael, Mandurriao, Iloilo City, Philippines"
+                    onClick={() => {
+                        const address = encodeURIComponent(
+                            "G-Park Phase 2, Gaisano ICC, Benigno Aquino Avenue, Brgy. San Rafael, Mandurriao, Iloilo City, Philippines"
+                        );
+                        window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, "_blank");
+                    }}
                 />
                 <FooterSection
                     iconSrc="opening-time-icon.svg"
@@ -27,6 +33,7 @@ const Footer = () => {
                     iconSrc="email-icon.svg"
                     title="Email"
                     description="happypill.barresto@gmail.com"
+                    onClick={() => window.location.href = "mailto:happypill.barresto@gmail.com"}
                 />
             </div>
 

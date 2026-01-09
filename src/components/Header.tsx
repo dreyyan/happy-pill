@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Styles from "../styles/Styles";
 import SecondaryButton from "./SecondaryButton";
+import PrimaryButton from "./PrimaryButton";
 
 const Header = () => {
     // States
@@ -44,7 +45,7 @@ const Header = () => {
                 ABOUT US
                 </Link>
 
-                <SecondaryButton
+                <PrimaryButton
                 text="CONTACT / RESERVE"
                 onClick={() =>
                     window.open("https://www.facebook.com/profile.php?id=61555806119974")

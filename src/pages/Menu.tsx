@@ -1,28 +1,74 @@
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 // Components
-import Styles from "../styles/Styles";
-import Header from "../components/Header";
 import CategoryCard from "../components/CategoryCard";
-
 // Data
 import MenuData from "../data/MenuData";
 import SectionCard from "../components/SectionCard";
 import Item from "../components/Item";
 
 const Menu = () => {
-    const navigate = useNavigate();
+    document.title = "Menu | Happy Pill Bar & Resto";
 
     // States
     const [selectedCategory, setSelectedCategory] = useState("");
     const [selectedSection, setSelectedSection] = useState("");
+    const [imageLoading, setImageLoading] = useState(false);
 
     const section = selectedCategory && selectedSection
-    ? MenuData[selectedCategory as keyof typeof MenuData]?.[selectedSection]
-    : undefined;
+        ? MenuData[selectedCategory as keyof typeof MenuData]?.[selectedSection]
+        : undefined;
 
-    // Handles
+    // PRELOAD CATEGORY ICONS ONCE (on mount)
+    useEffect(() => {
+        const iconUrls = [
+            "food-icon-dark.svg",
+            "drinks-icon-dark.svg",
+            "back-icon.svg" // optional: also preload back button icon
+        ];
+
+        iconUrls.forEach(src => {
+            const img = new Image();
+            img.src = src;
+            // No need to track loading state — these are small SVGs and load instantly
+        });
+    }, []); // Empty dependency → runs only once on mount
+
+    // PRELOAD MENU ITEM IMAGES WHEN ENTERING A SECTION
+    useEffect(() => {
+        if (section) {
+            setImageLoading(true);
+
+            const imageUrls = section.items
+                .filter(item => item.imgSrc)
+                .map(item => item.imgSrc) as string[];
+
+            let loadedCount = 0;
+            const totalImages = imageUrls.length;
+
+            if (totalImages === 0) {
+                setImageLoading(false);
+                return;
+            }
+
+            imageUrls.forEach(src => {
+                const img = new Image();
+                img.src = src;
+                img.onload = () => {
+                    loadedCount++;
+                    if (loadedCount === totalImages) {
+                        setImageLoading(false);
+                    }
+                };
+                img.onerror = () => {
+                    loadedCount++;
+                    if (loadedCount === totalImages) {
+                        setImageLoading(false);
+                    }
+                };
+            });
+        }
+    }, [selectedSection, selectedCategory]);
+
     const handleBackButton = () => {
         if (selectedSection) {
             setSelectedSection("");
@@ -30,37 +76,66 @@ const Menu = () => {
             setSelectedCategory("");
         }
     };
-    
+
     return (
-        <div className="min-h-screen flex flex-col px-[32px] py-[80px]">
-            {!selectedCategory && !selectedSection &&
-                <h1 className="text-center">MENU</h1>
-            }
-            {/* Back Button */}
-            {selectedCategory &&
-                <button onClick={handleBackButton} className="fixed top-22 left-6 rounded-full bg-[var(--text-primary)] text-md transition duration-300 ease-in-out hover:translate-x-[-2px] cursor-pointer z-1">
-                    <img src="back-icon.svg" className="h-8"></img>
-                </button>
-            }
-            {/* Main Menu */}
-            {!selectedSection && !selectedCategory &&
-                <div className="flex flex-col items-center gap-4 p-8 gap-y-8 mt-10">
-                    <CategoryCard text="Food" onClick={() => setSelectedCategory("Food")} iconSrc="food-icon-dark.svg"/>
-                    <CategoryCard text="Drinks" onClick={() => setSelectedCategory("Drinks")} iconSrc="drinks-icon-dark.svg"/>
+        <div className="min-h-screen flex flex-col px-[32px] py-[80px] relative">
+            {/* Full-screen loader only for menu item images */}
+            {imageLoading && (
+                <div className="fixed inset-0 bg-[var(--background)]/90 backdrop-blur-sm flex items-center justify-center z-50">
+                    <div className="text-center">
+                        <div className="w-16 h-16 border-4 border-[var(--primary)] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                        <p className="text-[var(--text-primary)] text-lg">Loading menu...</p>
+                    </div>
                 </div>
-            }
-            {/* Select Section */}
+            )}
+
+            {/* Page Title */}
+            {!selectedCategory && !selectedSection && (
+                <h1 className="text-center text-4xl font-bold mb-8 text-[var(--text-primary)]">
+                    MENU
+                </h1>
+            )}
+
+            {/* Back Button */}
+            {(selectedCategory || selectedSection) && (
+                <button
+                    onClick={handleBackButton}
+                    className="fixed top-24 left-6 rounded-full bg-[var(--text-primary)] p-2 transition duration-300 ease-in-out hover:translate-x-[-4px] cursor-pointer z-10"
+                >
+                    <img src="back-icon.svg" className="h-8 w-8" alt="Back" />
+                </button>
+            )}
+
+            {/* Main Menu - Category Selection */}
+            {!selectedCategory && !selectedSection && (
+                <div className="flex flex-col items-center gap-8 p-8 mt-10">
+                    <CategoryCard
+                        text="Food"
+                        onClick={() => setSelectedCategory("Food")}
+                        iconSrc="food-icon-dark.svg"
+                    />
+                    <CategoryCard
+                        text="Drinks"
+                        onClick={() => setSelectedCategory("Drinks")}
+                        iconSrc="drinks-icon-dark.svg"
+                    />
+                </div>
+            )}
+
+            {/* Section Selection */}
             {selectedCategory && !selectedSection && (
                 <div className="pt-4">
-                    <h2 className="flex font-bold justify-center text-[var(--text-primary)]">{selectedCategory.toUpperCase()}</h2>
-                    <div className="flex flex-col auto-rows-fr flex-1 items-center gap-4 p-8 gap-y-8 pt-4 mt-10">
+                    <h2 className="text-center text-3xl font-bold text-[var(--text-primary)] mb-8">
+                        {selectedCategory.toUpperCase()}
+                    </h2>
+                    <div className="flex flex-col items-center gap-6 p-8 pt-4">
                         {Object.entries(MenuData[selectedCategory as keyof typeof MenuData]).map(
-                            ([sectionName, section]) => (
+                            ([sectionName, sectionData]) => (
                                 <SectionCard
                                     key={sectionName}
                                     sectionName={sectionName}
-                                    description={section.description || ""}
-                                    imgSrc={section.imgSrc}
+                                    description={sectionData.description || ""}
+                                    imgSrc={sectionData.imgSrc}
                                     onClick={() => setSelectedSection(sectionName)}
                                 />
                             )
@@ -68,40 +143,113 @@ const Menu = () => {
                     </div>
                 </div>
             )}
+
             {/* Menu Items */}
             {section && (
-                <>
-                    <div className="pt-4">
-                        <h2 className="flex font-bold justify-center text-[var(--text-primary)]">{selectedSection.toUpperCase()}</h2>
-                        <div className="hidden sm:grid grid-cols-2 auto-rows-fr flex-1 items-center gap-4 p-8 pt-4">
-                            {section.items.map((item) => (
-                                <Item
-                                    key={item.name}
-                                    name={item.name}
-                                    imgSrc={item.imgSrc || "happy-pill-banner.png"}
-                                    price={item.price}
-                                    additionalPrice={item.additionalPrice}
-                                    additionalDetails={item.additionalDetails}
-                                    description={item.description || ""}
-                                    onClick={() => console.log(item.name)}
-                                />
-                            ))}
-                        </div>
-                        <div>
-                            {section.items.map((item) => (
-                                <button className="sm:hidden mb-4" key={item.name} onClick={() => console.log(item.name)}>
-                                    <p>{item.name}</p>
-                                    <p>{item.price.toFixed(2)}</p>
-                                    <p>{item.additionalPrice}</p>
-                                    <p>{item.additionalDetails}</p>
-                                    <p>{item.description || ""}</p>
-                                </button>
-                            ))}
-                        </div>
+                <div className="pt-4">
+                    <h2 className="text-center text-3xl font-bold text-[var(--text-primary)] mb-8">
+                        {selectedSection.toUpperCase()}
+                    </h2>
+
+                    {/* Desktop View */}
+                    <div className="hidden sm:grid grid-cols-2 gap-6 p-8 pt-4">
+                        {section.items.map((item) => (
+                            <Item
+                                key={item.name}
+                                name={item.name}
+                                imgSrc={item.imgSrc || "happy-pill-banner.png"}
+                                price={item.price}
+                                additionalPrice={item.additionalPrice}
+                                additionalDetails={item.additionalDetails}
+                                description={item.description || ""}
+                                onClick={() => console.log(item.name)}
+                            />
+                        ))}
                     </div>
-                </>
+
+                    {/* Mobile List View */}
+                    <div className="sm:hidden flex flex-col gap-6 px-4 py-6">
+                        {section.items.map((item) => (
+                            <div
+                                key={item.name}
+                                className="bg-[var(--card)] rounded-xl shadow-lg overflow-hidden transition-all duration-200 hover:shadow-xl active:scale-[0.98]"
+                                onClick={item.onClick || (() => console.log(item.name))}
+                            >
+                                {item.imgSrc ? (
+                                    <div className="relative h-52 w-full">
+                                        <img
+                                            src={item.imgSrc}
+                                            alt={item.name}
+                                            className="w-full h-full object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                                    </div>
+                                ) : (
+                                    <div className="h-52 w-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                                        <span className="text-4xl text-gray-500">🍽️</span>
+                                    </div>
+                                )}
+
+                                <div className="p-5">
+                                    <h4 className="font-bold text-lg text-[var(--text-primary)] mb-2">
+                                        {item.name}
+                                    </h4>
+
+                                    {(item.quantity || item.variants) && (
+                                        <div className="flex flex-wrap gap-2 mb-3">
+                                            {item.quantity && (
+                                                <span className="text-xs font-medium px-3 py-1 bg-[var(--accent-muted)] text-[var(--text-secondary)] rounded-full">
+                                                    {item.quantity}
+                                                </span>
+                                            )}
+                                            {item.variants && item.variants.length > 0 && (
+                                                <div className="relative group">
+                                                    <span className="text-xs font-medium px-3 py-1 bg-[var(--badge-bg)] text-[var(--badge-text)] rounded-full cursor-pointer">
+                                                        {item.variants.length} variant{item.variants.length > 1 ? 's' : ''}
+                                                    </span>
+                                                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-2 bg-[var(--background)] border border-[var(--primary)] text-[var(--text-primary)] text-xs rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 whitespace-nowrap z-10 shadow-xl">
+                                                        <div className="flex flex-col items-center gap-1">
+                                                            {item.variants.map((variant) => (
+                                                                <span key={variant}>{variant}</span>
+                                                            ))}
+                                                        </div>
+                                                        <div className="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-[var(--background)]" />
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
+
+                                    <div className="flex items-end gap-3 mb-3">
+                                        <p className="text-2xl font-bold text-[var(--price-main)]">
+                                            ₱{item.price.toFixed(2)}
+                                        </p>
+                                        {item.additionalPrice && (
+                                            <p className="text-lg font-semibold text-[var(--price-secondary)]">
+                                                / ₱{item.additionalPrice.toFixed(2)}
+                                            </p>
+                                        )}
+                                    </div>
+
+                                    {item.additionalDetails && item.additionalDetails.length > 0 && (
+                                        <p className="text-sm text-[var(--text-secondary)] mb-2 italic">
+                                            {item.additionalDetails.join(" • ")}
+                                        </p>
+                                    )}
+
+                                    {item.description && (
+                                        <p className="text-sm text-[var(--text-secondary)] line-clamp-2">
+                                            {item.description}
+                                        </p>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             )}
         </div>
-        );
+    );
 };
+
 export default Menu;

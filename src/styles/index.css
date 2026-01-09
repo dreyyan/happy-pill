@@ -12,6 +12,12 @@
   --card: #2D2D30;
   --captions-icons: #A0A0A0;
 
+  --price-main: #FCD34D;
+  --price-secondary: #D4AF37;
+  --badge-bg: #D4AF37;
+  --badge-text: #1C1C1E;
+  --accent-muted: rgba(212, 175, 55, 0.2);
+
   margin: 0;
 }
 
