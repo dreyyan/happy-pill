@@ -1,19 +1,69 @@
 interface ShowcaseFeatureProps {
-    title: string;
-    src: string;
-    description: string;
+  title: string;
+  src: string;
+  description: string;
 }
 
 const ShowcaseFeature: React.FC<ShowcaseFeatureProps> = ({ title, src, description }) => {
-    return (
-        <div className="">
-            <img src={src} alt={title} className="w-full h-auto" />
-            <div className="mx-6">
-                <h3 className="text-xl font-bold mt-4">{title}</h3>
-                <p className="mt-2 caption">{description}</p>
-            </div>
-        </div>
-    );
+  return (
+    <div className="
+      flex flex-col 
+      bg-[var(--card)] 
+      rounded-xl 
+      overflow-hidden 
+      shadow-lg 
+      transition-all duration-300 
+      hover:shadow-2xl 
+      hover:scale-[1.02]
+      max-w-[500px]
+    ">
+      {/* Image - responsive with proper aspect ratio */}
+<div className="
+  relative 
+  aspect-[4/3] 
+  w-full 
+  max-w-[500px]
+  mx-auto
+  overflow-hidden
+">
+  <img
+    src={src}
+    alt={title}
+    className="
+      w-full 
+      h-full 
+      object-cover 
+      transition-transform duration-500 
+      group-hover:scale-105
+    "
+    loading="lazy"
+  />
+</div>
+
+      {/* Content */}
+      <div className="p-5 sm:p-6 flex flex-col flex-grow">
+        <h3 className="
+          text-xl sm:text-2xl 
+          font-bold 
+          text-center
+          text-[var(--text-primary)] 
+          mb-3
+        ">
+          {title}
+        </h3>
+        
+        <p className="
+          text-[var(--text-secondary)] 
+          text-center
+          caption 
+          text-sm sm:text-base 
+          leading-relaxed
+        ">
+          {description}
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default ShowcaseFeature;

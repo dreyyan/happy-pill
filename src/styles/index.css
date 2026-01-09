@@ -21,6 +21,7 @@
   margin: 0;
 }
 
+/* Typefaces */
 .poppins {
   font-family: "Poppins", sans-serif;
 }
@@ -34,7 +35,9 @@ h1 {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 900;
-  font-size: 42px;
+  font-size: clamp(42px, 5vw, 72px);
+
+  
 
   color: var(--text-primary)
 }
@@ -43,14 +46,14 @@ h2 {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 700;
-  font-size: 36px;
+  font-size: clamp(32px, 4vw, 48px);
 }
 
 h3 {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 700;
-  font-size: 28px;
+  font-size: clamp(28px, 3.5vw, 36px);
 
   color: var(--text-primary);
 }
@@ -58,7 +61,7 @@ h3 {
 .body {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: clamp(14px, 1.2vw, 18px);
   line-height: 24px;
 
   color: var(--text-primary);
@@ -67,7 +70,7 @@ h3 {
 .caption {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: clamp(14px, 1vw, 16px);
 
   color: var(--text-primary);
 }
@@ -76,21 +79,21 @@ h3 {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 600;
-  font-size: 12px;
+  font-size: clamp(12px, 1.5vw, 14px);
 }
 
 .header-nav-link-active {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 600;
-  font-size: 14px;
+  font-size: clamp(14px, 1.5vw, 16px);
 }
 
 .footer-title {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 700;
-  font-size: 16px;
+  font-size: clamp(16px, 2vw, 20px);
 
   color: var(--text-primary);
 }
@@ -98,7 +101,7 @@ h3 {
 .footer-caption {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  font-size: 12px;
+  font-size: clamp(12px, 1.2vw, 14px);
 
   color: var(--text-primary);
 }
@@ -107,17 +110,6 @@ html, body {
   min-height: 100vh;
   width: 100%;
 
-  background-color: var(--background);
-
   font-size: clamp(16px, 1.1vw, 20px);
+  background-color: var(--background);
 }
-
-/* Hide Scrollbar */
-/* body {
-  overflow-y: scroll;
-  scrollbar-width: none;
-}
-
-body::-webkit-scrollbar {
-  display: none;
-} */

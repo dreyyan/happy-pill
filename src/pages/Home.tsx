@@ -5,14 +5,15 @@ import ShowcaseFeature from "../components/ShowcaseFeature";
 
 const Home = () => {
     const navigate = useNavigate();
-    const featuresRef = useRef(null); // Ref for scroll target
+    const featuresRef = useRef<HTMLDivElement | null>(null);
 
+    // Handles
     const handleScroll = () => {
         featuresRef.current?.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
-        <div className="">
+        <>
             {/* Hero Section */}
             <div
                 className="flex flex-col items-center px-[32px] py-[80px] bg-cover bg-center relative mt-4 mb-60"
@@ -33,9 +34,9 @@ const Home = () => {
                         Your ultimate escape for bold flavors, crafted cocktails, and unforgettable nights.
                     </p>
 
-                    {/* [PRIMARY BUTTON] VIEW MENU */}
-                    <PrimaryButton text="VIEW MENU" onClick={() => navigate("/menu")} width="40%"/>
-
+                    {/* [PRIMARY BUTTON] View Menu */}
+                    <PrimaryButton text="VIEW MENU" onClick={() => navigate("/menu")}/>
+                    {/* [BUTTON] See More */}
                     <button
                         onClick={handleScroll}
                         className="cursor-pointer opacity-60 transition duration-400 ease-in-out transform hover:opacity-100 hover:-translate-y-[-2px]"
@@ -46,7 +47,7 @@ const Home = () => {
             </div>
 
             {/* Showcase Features */}
-            <div ref={featuresRef} className="space-y-[140px] my-[40px]">
+            <div ref={featuresRef} className="flex flex-col items-center space-y-[140px] my-[40px] px-12">
                 <ShowcaseFeature
                     title="Crafted Cocktails"
                     src="showcase-1.png"
@@ -63,7 +64,7 @@ const Home = () => {
                     description="Unforgettable nights with local artists, bands, and themed parties – the heart of Iloilo nightlife."
                 />
             </div>
-        </div>
+        </>
     );
 };
 

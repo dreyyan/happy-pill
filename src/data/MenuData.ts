@@ -19,43 +19,43 @@ const MenuData: MenuDataType = {
             "items": [
                 {
                     name: "French Fries",
-                    price: 120.00,
+                    price: 130.00,
                     imgSrc: "menu/food/french-fries.jpg",
-                    additionalPrice: 130.00,
+                    additionalPrice: 140.00,
                     additionalDetails: ["No Flavor", "Sour Cream | BBQ | Cheese"],
                     variants: ["Sour Cream", "BBQ", "Cheese"]
                 },
                 {
                     name: "Mojos",
-                    price: 120.00,
+                    price: 130.00,
                     imgSrc: "menu/food/mojos.jpg",
-                    additionalPrice: 130.00,
+                    additionalPrice: 140.00,
                     additionalDetails: ["No Flavor", "Sour Cream | BBQ | Cheese"],
                     variants: ["Sour Cream", "BBQ", "Cheese"]
                 },
                 { 
                     name: "Street Food Platter", 
-                    price: 120.00,
+                    price: 130.00,
                     imgSrc: "menu/food/street-food-platter.png"
                 },
                 { 
                     name: "Cheese Sticks", 
-                    price: 120.00,
+                    price: 130.00,
                     imgSrc: "menu/food/cheese-sticks.png"
                 },
                 { 
                     name: "Lumpia Shanghai", 
-                    price: 120.00,
+                    price: 130.00,
                     imgSrc: "menu/food/lumpia-shanghai.png"
                 },
                 { 
                     name: "Chicken Skin", 
-                    price: 200.00,
+                    price: 210.00,
                     imgSrc: "menu/food/appetizers.png"
                 },
                 { 
                     name: "Nachos", 
-                    price: 200.00,
+                    price: 210.00,
                     imgSrc: "menu/food/nachos.jpg"
                 },
                 { 
@@ -63,6 +63,11 @@ const MenuData: MenuDataType = {
                     price: 100.00, 
                     quantity: "12 pcs.", 
                     variants: ["Steamed", "Fried"],
+                    imgSrc: "menu/food/siomai.jpg"
+                },
+                { 
+                    name: "Tofu", 
+                    price: 200.00, 
                     imgSrc: ""
                 },
             ]
@@ -73,17 +78,17 @@ const MenuData: MenuDataType = {
             "items": [
             { 
                 name: "Bijon Guisado", 
-                price: 250.00,
+                price: 260.00,
                 imgSrc: "menu/food/guisarap.png",
             },
             { 
                 name: "Canton Guisado", 
-                price: 250.00,
+                price: 260.00,
                 imgSrc: ""
             },
             { 
                 name: "Sotanghon Guisado", 
-                price: 250.00,
+                price: 260.00,
                 imgSrc: "menu/food/sotanghon-guisado.png",
             },
             ]
@@ -94,25 +99,27 @@ const MenuData: MenuDataType = {
             "items": [
             { 
                 name: "Buffalo Wings", 
-                price: 250.00,
+                price: 260.00,
                 imgSrc: "menu/food/chicken-classics.png",
             },
             { 
                 name: "Buttered Chicken", 
-                price: 250.00,
+                price: 260.00,
                 imgSrc: "",
             },
             { 
                 name: "Chicken Teriyaki", 
-                price: 250.00,
+                price: 260.00,
                 imgSrc: "",
             },
             { 
                 name: "Fried Chix", 
-                price: 220.00,
-                imgSrc: "menu/food/fried-chix.png"
+                price: 230.00,
+                imgSrc: "menu/food/fried-chix.png",
+                additionalPrice: 310.00,
+                additionalDetails: ["/wo Fries/Mojos", "/w Fries/Mojos"],
+                variants: ["/wo Fries/Mojos", "/w Fries/Mojos"]
             },
-            // /w Fries/Mojos
             ]
         },
         "Pork Favorites": {
@@ -121,22 +128,22 @@ const MenuData: MenuDataType = {
             "items": [
                 {
                     name: "Lechon Kawali",
-                    price: 250.00,
+                    price: 260.00,
                     imgSrc: "menu/food/lechon-kawali.jpg",
                 },
                 {
                     name: "Pork Sisig",
-                    price: 250.00,
-                    imgSrc: "",
+                    price: 260.00,
+                    imgSrc: "menu/food/pork-sisig.jpg",
                 },
                 {
                     name: "Adobo Backribs",
-                    price: 280.00,
+                    price: 290.00,
                     imgSrc: "menu/food/adobo-backribs.jpg",
                 },
                 { 
                     name: "Pork Bulalo",
-                    price: 250.00,
+                    price: 360.00,
                     imgSrc: "menu/food/pork-favorites.png"
                 },
             ]
@@ -147,36 +154,45 @@ const MenuData: MenuDataType = {
             "items": [
                 {
                     name: "Calamares",
-                    price: 200.00,
+                    price: 210.00,
                     imgSrc: "menu/food/calamares.png",
                 },
                 {
                     name: "Fish Fillet", 
-                    price: 200.00,
+                    price: 210.00,
                     imgSrc: "menu/food/fish-fillet.png",
                 },
                 {
                     name: "Sinigang Bangus", 
-                    price: 400.00,
+                    price: 410.00,
                     imgSrc: "",
                 },
                 {
                     name: "Sisig Bangus", 
-                    price: 300.00,
+                    price: 310.00,
                     imgSrc: "",
                 },
                 {
                     name: "Sizzling Bangus", 
-                    price: 350.00,
+                    price: 360.00,
                     imgSrc: "",
                 },
             ]
         },
         "Afforda-Rice": {
             "description": "Simple but satisfying rice options to pair with any meal.",
+            imgSrc: "menu/food/garlic-rice.jpg",
             "items": [
-                { name: "Plain Rice", price: 25.00 },
-                { name: "Garlic Rice", price: 30.00 },
+                {
+                    name: "Plain Rice",
+                    price: 28.00,
+                    imgSrc: "menu/food/plain-rice.jpg"
+                },
+                {
+                    name: "Garlic Rice",
+                    price: 33.00,
+                    imgSrc: "menu/food/garlic-rice.jpg"
+                },
             ]
         },
         "Budget Meals": {
@@ -185,59 +201,63 @@ const MenuData: MenuDataType = {
             "items": [
                 {
                     name: "Calamares",
-                    price: 130.00,
+                    price: 140.00,
                     imgSrc: "menu/food/budget-calamares.jpg",
                 },
                 { 
                     name: "Chicken Skin", 
-                    price: 130.00,
+                    price: 140.00,
                     imgSrc: "menu/food/budget-chicken-skin.png",
                 },
                 { name: "Fish Fillet", price: 130.00 },
                 { 
                     name: "Sweet & Sour Tofu", 
-                    price: 130.00,
+                    price: 140.00,
                     imgSrc: "",
                 },
                 { 
                     name: "Sizzling Tofu", 
-                    price: 130.00,
+                    price: 140.00,
                     imgSrc: ""
                 },
                 { 
                     name: "Sizzling Sisig", 
-                    price: 155.00,
-                    imgSrc: ""
+                    price: 165.00,
+                    imgSrc: "menu/food/budget-sizzling-sisig.png",
                 },
                 {
                     name: "Sizzling Bangus",
-                    price: 175.00,
+                    price: 185.00,
                     imgSrc: "menu/food/budget-sizzling-bangus.png",
                 },
                 {
                     name: "Fried Chix",
-                    price: 150.00,
+                    price: 160.00,
                     imgSrc: "menu/food/budget-fried-chix.png",
                 },
-                { name: "Teriyaki", price: 150.00 },
+                {
+                    name: "Teriyaki",
+                    price: 160.00,
+                    imgSrc: "",
+                },
                 {
                     name: "Buttered Chicken",
-                    price: 150.00,
+                    price: 160.00,
                     imgSrc: "menu/food/budget-buttered-chicken.png",
                 },
                 {
                     name: "Buffalo Wings",
-                    price: 150.00,
-                    imgSrc: "",
+                    price: 160.00,
+                    imgSrc: "menu/food/budget-buffalo-wings.png",
                 },
                 {
                     name: "Adobo Backribs",
-                    price: 175.00,
+                    price: 185.00,
                     imgSrc: "",
                 },
                 {
                     name: "Lechon Kawali",
-                    price: 150.00,
+                    price: 160.00,
                     imgSrc: "menu/food/budget-lechon-kawali.png",
                 },
             ]
@@ -248,17 +268,17 @@ const MenuData: MenuDataType = {
             "items": [
                 { 
                     name: "Cornsilog", 
-                    price: 120.00,
+                    price: 130.00,
                     imgSrc: ""
                 },
                 { 
                     name: "Tocilog", 
-                    price: 120.00,
+                    price: 130.00,
                     imgSrc: "menu/food/tocilog.png"
                 },
                 { 
                     name: "Tapsilog", 
-                    price: 130.00,
+                    price: 140.00,
                     imgSrc: "menu/food/yumsilog.png"
                 },
             ]
@@ -271,29 +291,29 @@ const MenuData: MenuDataType = {
             "items": [
                 {
                     name: "Grapes",
-                    price: 400.00,
-                    additionalPrice: 600.00,
+                    price: 450.00,
+                    additionalPrice: 650.00,
                     additionalDetails: ["1.5L", "3L"],
                     imgSrc: ""
                 },
                 {
                     name: "Strawberry",
-                    price: 400.00,
-                    additionalPrice: 600.00,
+                    price: 450.00,
+                    additionalPrice: 650.00,
                     additionalDetails: ["1.5L", "3L"],
                     imgSrc: ""
                 },
                 {
                     name: "Dalandan",
-                    price: 400.00,
-                    additionalPrice: 600.00,
+                    price: 450.00,
+                    additionalPrice: 650.00,
                     additionalDetails: ["1.5L", "3L"],
                     imgSrc: ""
                 },
                 {
                     name: "Pomelo",
-                    price: 400.00,
-                    additionalPrice: 600.00,
+                    price: 450.00,
+                    additionalPrice: 650.00,
                     additionalDetails: ["1.5L", "3L"],
                     imgSrc: ""
                 },
@@ -305,30 +325,44 @@ const MenuData: MenuDataType = {
             "items": [
                 {
                     name: "Jinro Soju Grapefruit",
-                    price: 195.00,
+                    price: 200.00,
                     quantity: "360 mL",
                     imgSrc: "menu/drinks/jinro-soju-grapefruit.jpg"
                 },
                 {
                     name: "Clvb Emperador",
-                    price: 350.00,
-                    imgSrc: "menu/drinks/clvb-emperador.jpg"
+                    price: 450.00,
+                    quantity: "750mL",
+                    imgSrc: "menu/drinks/clvb-emperador.jpg",
+                },
+                {
+                    name: "Clvb Emperador",
+                    price: 450.00,
+                    quantity: "1.5L",
+                    imgSrc: "menu/drinks/clvb-emperador.jpg",
+                    additionalPrice: 600.00,
+                    additionalDetails: ["/wo Iced Tea & Kropek", "/w Iced Tea & Kropek"],
+                    variants: ["/wo Iced Tea & Kropek", "/w Iced Tea & Kropek"]
                 },
                 {
                     name: "Charles & James",
                     price: 500.00,
-                    imgSrc: "menu/drinks/charles-and-james.jpg"
+                    imgSrc: "menu/drinks/charles-and-james.jpg",
+                    additionalDetails: ["/w Iced Tea & Kropek"]
                 },
                 {
                     name: "Andy Player",
                     price: 500.00,
                     quantity: "2 bottles",
-                    imgSrc: "menu/drinks/andy-player.png"
+                    imgSrc: "menu/drinks/andy-player.png",
+                    additionalDetails: ["/w Iced Tea & Kropek"]
                 },
                 {
                     name: "Primera",
                     price: 500.00,
-                    imgSrc: "menu/drinks/primera-light.png"
+                    quantity: "1L",
+                    imgSrc: "menu/drinks/primera-light.png",
+                    additionalDetails: ["/w Iced Tea & Kropek"]
                 },
                 {
                     name: "Alhambra Solera Light",
@@ -338,13 +372,13 @@ const MenuData: MenuDataType = {
                 },
                 {
                     name: "Alfonso Light",
-                    price: 650.00,
+                    price: 680.00,
                     quantity: "1L",
                     imgSrc: "menu/drinks/alfonso-light.jpg"
                 },
                 {
                     name: "Fundador Super Special",
-                    price: 700.00,
+                    price: 720.00,
                     quantity: "1L",
                     imgSrc: "menu/drinks/fundador-super-special.webp"
                 },
@@ -358,34 +392,39 @@ const MenuData: MenuDataType = {
                     price: 750.00,
                     imgSrc: "menu/drinks/fundador-light.webp"
                 },
-                {
-                    name: "Smirnoff Vodka",
-                    price: 1060.00,
-                    imgSrc: "menu/drinks/smirnoff-vodka.jpg"
-                },
-                {
-                    name: "Absolut Vodka",
-                    price: 1198.00,
-                    quantity: "700 mL",
-                    imgSrc: "menu/drinks/absolut-vodka.jpg"
-                },
-                {
-                    name: "Bacardi White Rum",
-                    price: 1260.00,
-                    imgSrc: "menu/drinks/bacardi-white-rum.jpg"
-                },
+                // {
+                //     name: "Smirnoff Vodka",
+                //     price: 1060.00,
+                //     imgSrc: "menu/drinks/smirnoff-vodka.jpg"
+                // },
+                // {
+                //     name: "Absolut Vodka",
+                //     price: 1198.00,
+                //     quantity: "700 mL",
+                //     imgSrc: "menu/drinks/absolut-vodka.jpg"
+                // },
+                // {
+                //     name: "Bacardi White Rum",
+                //     price: 1260.00,
+                //     imgSrc: "menu/drinks/bacardi-white-rum.jpg"
+                // },
                 {
                     name: "Jose Cuervo Tequila",
                     price: 1900.00,
-                    additionalPrice: 2300.00,
-                    additionalDetails: ["700 mL", "1L"],
+                    quantity: "700mL",
+                    imgSrc: "menu/drinks/jose-cuervo-tequila.jpg"
+                },
+                {
+                    name: "Jose Cuervo Tequila",
+                    price: 2300.00,
+                    quantity: "1L",
                     imgSrc: "menu/drinks/jose-cuervo-tequila.jpg"
                 },
                 {
                     name: "Jim Beam",
                     price: 1880.00,
                     quantity: "1L",
-                imgSrc: "menu/drinks/jim-beam.webp"
+                    imgSrc: "menu/drinks/jim-beam.webp"
                 },
                 {
                     name: "Johnnie Walker Red Label",
@@ -443,31 +482,45 @@ const MenuData: MenuDataType = {
             "items": [
                 {
                     name: "San Mig Light",
-                    price: 80.00,
-                    additionalPrice: 475.00,
-                    additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"],
+                    price: 90.00,
+                    additionalPrice: 520.00,
+                    additionalDetails: ["1 bottle", "1 bucket (5 bottles + 1 bottle or finger food of choice)"],
                     imgSrc: "menu/drinks/bucket-san-mig-light.jpg"
                 },
                 {
                     name: "San Mig Apple",
-                    price: 80.00,
-                    additionalPrice: 475.00,
-                    additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"],
+                    price: 90.00,
+                    additionalPrice: 520.00,
+                    additionalDetails: ["1 bottle", "1 bucket (5 bottles + 1 bottle or finger food of choice)"],
                     imgSrc: "menu/drinks/bucket-san-mig-apple.jpg"
                 },
                 {
                     name: "San Mig Pilsen",
-                    price: 80.00,
-                    additionalPrice: 475.00,
-                    additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"],
+                    price: 90.00,
+                    additionalPrice: 520.00,
+                    additionalDetails: ["1 bottle", "1 bucket (5 bottles + 1 bottle or finger food of choice)"],
                     imgSrc: "menu/drinks/bucket-san-mig-pilsen.jpg"
                 },
                 {
                     name: "Stallion",
-                    price: 80.00,
-                    additionalPrice: 475.00,
-                    additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"],
+                    price: 90.00,
+                    additionalPrice: 520.00,
+                    additionalDetails: ["1 bottle", "1 bucket (5 bottles + 1 bottle or finger food of choice)"],
                     imgSrc: "menu/drinks/bucket-stallion.jpg"
+                },
+                {
+                    name: "RH",
+                    price: 110.00,
+                    additionalPrice: 640.00,
+                    quantity: "500 mL",
+                    additionalDetails: ["1 bottle", "1 bucket (5 bottles + 1 bottle or finger food of choice)"],
+                    imgSrc: "menu/drinks/bucket-rh-500.jpg"
+                },
+                {
+                    name: "RH",
+                    price: 200.00,
+                    quantity: "1L",
+                    imgSrc: "menu/drinks/rh-1L.jpeg"
                 },
                 {
                     name: "Tanduay Ice - Mix",
@@ -483,20 +536,6 @@ const MenuData: MenuDataType = {
                     additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"],
                     imgSrc: "menu/drinks/bucket-mule-smirnoff.jpg"
                 },
-                {
-                    name: "RH",
-                    price: 100.00,
-                    additionalPrice: 575.00,
-                    additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"],
-                    quantity: "500 mL",
-                    imgSrc: "menu/drinks/bucket-rh-500.jpg"
-                },
-                {
-                    name: "RH",
-                    price: 190.00,
-                    quantity: "1L",
-                    imgSrc: "menu/drinks/rh-1L.jpeg"
-                },
                 // {
                 //     name: "San Mig Flavored Mix",
                 //     price: 110.00,
@@ -511,27 +550,27 @@ const MenuData: MenuDataType = {
             "items": [
                 {
                     name: "Cucumber Shake",
-                    price: 100.00,
+                    price: 120.00,
                     imgSrc: ""
                 },
                 {
                     name: "Mango Shake",
-                    price: 100.00,
+                    price: 120.00,
                     imgSrc: "menu/drinks/mango-shake.png"
                 },
                 {
                     name: "Mango Graham Shake",
-                    price: 100.00,
+                    price: 120.00,
                     imgSrc: ""
                 },
                 {
                     name: "Strawberry Shake",
-                    price: 100.00,
+                    price: 120.00,
                     imgSrc: "menu/drinks/strawberry-shake.png"
                 },
                 {
                     name: "Cookies 'n Cream Shake",
-                    price: 100.00,
+                    price: 120.00,
                     imgSrc: "menu/drinks/cookies-n-cream-shake.png"
                 },
             ]
@@ -557,12 +596,6 @@ const MenuData: MenuDataType = {
                 },
                 {
                     name: "Coke",
-                    price: 125.00,
-                    quantity: "1L",
-                    imgSrc: "menu/drinks/coke-1L.png"
-                },
-                {
-                    name: "Coke",
                     price: 160.00,
                     quantity: "1.5L",
                     imgSrc: "menu/drinks/coke-1.5L.webp"
@@ -571,6 +604,7 @@ const MenuData: MenuDataType = {
         },
         "Everyday Refreshments": {
             "description": "Light and refreshing drinks for everyday thirst-quenching moments.",
+            "imgSrc": "menu/drinks/bottled-water.webp",
             "items": [
                 {
                     name: "Bottled Water",
@@ -591,31 +625,32 @@ const MenuData: MenuDataType = {
         },
         "Shots!": {
             "description": "Get the night started with our smooth and bold shot mixes.",
+            "imgSrc": "menu/drinks/shots.jpg",
             "items": [
                 {
                     name: "Moscow Mule",
                     price: 180.00,
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/moscow-mule.jpg"
                 },
                 {
                     name: "Mexican Mule",
                     price: 180.00,
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/mexican-mule.jpg"
                 },
                 {
                     name: "Kentucky Mule",
                     price: 180.00,
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/kentucky-mule.jpg"
                 },
                 {
                     name: "Margarita",
                     price: 200.00,
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/margarita.jpg"
                 },
                 {
                     name: "Rhumcoke",
                     price: 110.00,
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/rhumcoke.jpg"
                 },
                 {
                     name: "Gintonic",
