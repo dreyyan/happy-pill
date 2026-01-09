@@ -132,9 +132,9 @@ const MenuData: MenuDataType = {
                     imgSrc: "menu/food/lechon-kawali.jpg",
                 },
                 {
-                    name: "Pork Sisig",
+                    name: "Sizzling Pork Sisig",
                     price: 260.00,
-                    imgSrc: "menu/food/pork-sisig.jpg",
+                    imgSrc: "menu/food/sizzling-pork-sisig.jpg",
                 },
                 {
                     name: "Adobo Backribs",
@@ -221,9 +221,9 @@ const MenuData: MenuDataType = {
                     imgSrc: ""
                 },
                 { 
-                    name: "Sizzling Sisig", 
+                    name: "Sisig", 
                     price: 165.00,
-                    imgSrc: "menu/food/budget-sizzling-sisig.png",
+                    imgSrc: "menu/food/budget-sisig.jpg",
                 },
                 {
                     name: "Sizzling Bangus",
