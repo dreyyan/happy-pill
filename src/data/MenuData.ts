@@ -20,7 +20,7 @@ const MenuData: MenuDataType = {
                 {
                     name: "French Fries",
                     price: 130.00,
-                    imgSrc: "menu/food/french-fries.jpg",
+                    imgSrc: "menu/food/french-fries.png",
                     additionalPrice: 140.00,
                     additionalDetails: ["No Flavor", "Sour Cream | BBQ | Cheese"],
                     variants: ["Sour Cream", "BBQ", "Cheese"]
@@ -28,7 +28,7 @@ const MenuData: MenuDataType = {
                 {
                     name: "Mojos",
                     price: 130.00,
-                    imgSrc: "menu/food/mojos.jpg",
+                    imgSrc: "menu/food/mojos.png",
                     additionalPrice: 140.00,
                     additionalDetails: ["No Flavor", "Sour Cream | BBQ | Cheese"],
                     variants: ["Sour Cream", "BBQ", "Cheese"]
@@ -56,19 +56,19 @@ const MenuData: MenuDataType = {
                 { 
                     name: "Nachos", 
                     price: 210.00,
-                    imgSrc: "menu/food/nachos.jpg"
+                    imgSrc: "menu/food/nachos.png"
                 },
                 { 
                     name: "Siomai", 
                     price: 100.00, 
                     quantity: "12 pcs.", 
                     variants: ["Steamed", "Fried"],
-                    imgSrc: "menu/food/siomai.jpg"
+                    imgSrc: "menu/food/siomai.png"
                 },
                 { 
-                    name: "Tofu", 
+                    name: "Sizzling Tofu", 
                     price: 200.00, 
-                    imgSrc: ""
+                    imgSrc: "menu/food/sizzling-tofu.png"
                 },
             ]
         },
@@ -79,12 +79,12 @@ const MenuData: MenuDataType = {
             { 
                 name: "Bijon Guisado", 
                 price: 260.00,
-                imgSrc: "menu/food/guisarap.png",
+                imgSrc: "menu/food/bijon-guisado.png",
             },
             { 
                 name: "Canton Guisado", 
                 price: 260.00,
-                imgSrc: ""
+                imgSrc: "menu/food/canton-guisado.png",
             },
             { 
                 name: "Sotanghon Guisado", 
@@ -100,7 +100,7 @@ const MenuData: MenuDataType = {
             { 
                 name: "Buffalo Wings", 
                 price: 260.00,
-                imgSrc: "menu/food/chicken-classics.png",
+                imgSrc: "menu/food/buffalo-wings.png",
             },
             { 
                 name: "Buttered Chicken", 
@@ -129,22 +129,22 @@ const MenuData: MenuDataType = {
                 {
                     name: "Lechon Kawali",
                     price: 260.00,
-                    imgSrc: "menu/food/lechon-kawali.jpg",
+                    imgSrc: "menu/food/lechon-kawali.png",
                 },
                 {
                     name: "Sizzling Pork Sisig",
                     price: 260.00,
-                    imgSrc: "menu/food/sizzling-pork-sisig.jpg",
+                    imgSrc: "menu/food/sizzling-pork-sisig.png",
                 },
                 {
                     name: "Adobo Backribs",
                     price: 290.00,
-                    imgSrc: "menu/food/adobo-backribs.jpg",
+                    imgSrc: "menu/food/adobo-backribs.png",
                 },
                 { 
                     name: "Pork Bulalo",
                     price: 360.00,
-                    imgSrc: "menu/food/pork-favorites.png"
+                    imgSrc: "menu/food/pork-bulalo.png"
                 },
             ]
         },
@@ -168,30 +168,30 @@ const MenuData: MenuDataType = {
                     imgSrc: "",
                 },
                 {
-                    name: "Sisig Bangus", 
+                    name: "Sizzling Sisig Bangus", 
                     price: 310.00,
-                    imgSrc: "",
+                    imgSrc: "menu/food/sizzling-sisig-bangus.png",
                 },
                 {
                     name: "Sizzling Bangus", 
                     price: 360.00,
-                    imgSrc: "",
+                    imgSrc: "menu/food/sizzling-bangus.png",
                 },
             ]
         },
         "Afforda-Rice": {
             "description": "Simple but satisfying rice options to pair with any meal.",
-            imgSrc: "menu/food/garlic-rice.jpg",
+            imgSrc: "menu/food/afforda-rice.png",
             "items": [
                 {
                     name: "Plain Rice",
                     price: 28.00,
-                    imgSrc: "menu/food/plain-rice.jpg"
+                    imgSrc: "menu/food/plain-rice.png"
                 },
                 {
                     name: "Garlic Rice",
                     price: 33.00,
-                    imgSrc: "menu/food/garlic-rice.jpg"
+                    imgSrc: "menu/food/garlic-rice.png"
                 },
             ]
         },
@@ -200,63 +200,67 @@ const MenuData: MenuDataType = {
             "imgSrc": "menu/food/budget-meals.png",
             "items": [
                 {
-                    name: "Calamares",
+                    name: "Calamares /w Rice",
                     price: 140.00,
-                    imgSrc: "menu/food/budget-calamares.jpg",
+                    imgSrc: "menu/food/budget-calamares.png",
                 },
                 { 
-                    name: "Chicken Skin", 
+                    name: "Chicken Skin /w Rice", 
                     price: 140.00,
                     imgSrc: "menu/food/budget-chicken-skin.png",
                 },
-                { name: "Fish Fillet", price: 130.00 },
-                { 
-                    name: "Sweet & Sour Tofu", 
-                    price: 140.00,
-                    imgSrc: "",
+                {
+                    name: "Fish Fillet /w Rice",
+                    price: 130.00,
+                    imgSrc: "menu/food/budget-fish-fillet.png",
                 },
                 { 
-                    name: "Sizzling Tofu", 
+                    name: "Sweet & Sour Tofu /w Rice", 
                     price: 140.00,
-                    imgSrc: ""
+                    imgSrc: "menu/food/budget-sweet-and-sour-tofu.jpg",
                 },
                 { 
-                    name: "Sisig", 
+                    name: "Sizzling Tofu /w Rice", 
+                    price: 140.00,
+                    imgSrc: "menu/food/budget-sizzling-tofu.png",
+                },
+                { 
+                    name: "Pork Sisig /w Rice", 
                     price: 165.00,
-                    imgSrc: "menu/food/budget-sisig.jpg",
+                    imgSrc: "menu/food/budget-pork-sisig.png",
                 },
                 {
-                    name: "Sizzling Bangus",
+                    name: "Sizzling Bangus /w Rice",
                     price: 185.00,
                     imgSrc: "menu/food/budget-sizzling-bangus.png",
                 },
                 {
-                    name: "Fried Chix",
+                    name: "Fried Chix /w Rice",
                     price: 160.00,
                     imgSrc: "menu/food/budget-fried-chix.png",
                 },
                 {
-                    name: "Teriyaki",
+                    name: "Teriyaki /w Rice",
                     price: 160.00,
-                    imgSrc: "",
+                    imgSrc: "menu/food/budget-teriyaki.png",
                 },
                 {
-                    name: "Buttered Chicken",
+                    name: "Buttered Chicken /w Rice",
                     price: 160.00,
                     imgSrc: "menu/food/budget-buttered-chicken.png",
                 },
                 {
-                    name: "Buffalo Wings",
+                    name: "Buffalo Wings /w Rice",
                     price: 160.00,
                     imgSrc: "menu/food/budget-buffalo-wings.png",
                 },
                 {
-                    name: "Adobo Backribs",
+                    name: "Adobo Backribs /w Rice",
                     price: 185.00,
-                    imgSrc: "",
+                    imgSrc: "menu/food/budget-adobo-backribs.png",
                 },
                 {
-                    name: "Lechon Kawali",
+                    name: "Lechon Kawali /w Rice",
                     price: 160.00,
                     imgSrc: "menu/food/budget-lechon-kawali.png",
                 },
@@ -264,7 +268,7 @@ const MenuData: MenuDataType = {
         },
         "Yum-Silog!": {
             "description": "The ultimate Filipino comfort meals — sunny-side up egg, garlic rice, and your favorite ulam!",
-            "imgSrc": "menu/food/yumsilog.png",
+            "imgSrc": "menu/food/yum-silog.png",
             "items": [
                 { 
                     name: "Cornsilog", 
@@ -287,41 +291,41 @@ const MenuData: MenuDataType = {
     Drinks: {
         "Happy Towers": {
             "description": "Big towers, bigger fun! Shareable cocktail towers perfect for barkada nights.",
-            "imgSrc": "",
+            "imgSrc": "menu/drinks/happy-towers.png",
             "items": [
                 {
                     name: "Grapes",
                     price: 450.00,
                     additionalPrice: 650.00,
                     additionalDetails: ["1.5L", "3L"],
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/tower-grapes.png"
                 },
                 {
                     name: "Strawberry",
                     price: 450.00,
                     additionalPrice: 650.00,
                     additionalDetails: ["1.5L", "3L"],
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/tower-strawberry.png"
                 },
                 {
                     name: "Dalandan",
                     price: 450.00,
                     additionalPrice: 650.00,
                     additionalDetails: ["1.5L", "3L"],
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/tower-dalandan.png"
                 },
                 {
                     name: "Pomelo",
                     price: 450.00,
                     additionalPrice: 650.00,
                     additionalDetails: ["1.5L", "3L"],
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/tower-pomelo.png"
                 },
             ]
         },
         "Alcohol Avenue": {
             "description": "A curated list of liquors and spirits to lift your mood and get the party going.",
-            "imgSrc": "menu/drinks/alcohol-avenue.webp",
+            "imgSrc": "menu/drinks/alcohol-avenue.png",
             "items": [
                 {
                     name: "Jinro Soju Grapefruit",
@@ -478,7 +482,7 @@ const MenuData: MenuDataType = {
         },
         "Bottle/Bucket": {
             "description": "Grab a bottle or share a bucket — with bonus snacks to complete your chill night.",
-            "imgSrc": "menu/drinks/bucket-san-mig-pilsen.jpg",
+            "imgSrc": "menu/drinks/bottle-bucket.png",
             "items": [
                 {
                     name: "San Mig Light",
@@ -546,7 +550,7 @@ const MenuData: MenuDataType = {
         },
         "Shakes": {
             "description": "Sweet, cold, and creamy — the perfect refresher to beat the heat.",
-            "imgSrc": "menu/drinks/mango-shake.png",
+            "imgSrc": "menu/drinks/shakes.png",
             "items": [
                 {
                     name: "Cucumber Shake",
@@ -577,7 +581,7 @@ const MenuData: MenuDataType = {
         },
         "Softdrinks": {
             "description": "Classic carbonated refreshments that go well with any meal.",
-            "imgSrc": "menu/drinks/softdrinks.jpg",
+            "imgSrc": "menu/drinks/softdrinks.png",
             "items": [
                 {
                     name: "Royal Sakto",
@@ -614,7 +618,7 @@ const MenuData: MenuDataType = {
                 {
                     name: "Iced Tea Pitcher",
                     price: 100.00,
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/iced-tea-pitcher.jpg"
                 },
                 {
                     name: "Cucumber Pitcher",
@@ -625,7 +629,7 @@ const MenuData: MenuDataType = {
         },
         "Shots!": {
             "description": "Get the night started with our smooth and bold shot mixes.",
-            "imgSrc": "menu/drinks/shots.jpg",
+            "imgSrc": "menu/drinks/shots.png",
             "items": [
                 {
                     name: "Moscow Mule",
@@ -655,7 +659,7 @@ const MenuData: MenuDataType = {
                 {
                     name: "Gintonic",
                     price: 110.00,
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/gintonic.jpg"
                 },
             ]
         },
