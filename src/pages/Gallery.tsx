@@ -47,7 +47,7 @@ const Gallery = () => {
     }, [activeCategory]); // Re-run when category changes
 
     return (
-        <div className="min-h-screen flex flex-col px-[32px] py-[80px] relative">
+        <div className="min-h-screen flex flex-col px-[32px] py-16 relative">
             <h1 className="text-center text-4xl font-bold mb-10 text-[var(--text-primary)]">
                 GALLERY
             </h1>
@@ -74,7 +74,7 @@ const Gallery = () => {
                 <div className="relative h-96 flex items-center justify-center">
                     <div className="text-center">
                         <div className="w-16 h-16 border-4 border-[var(--primary)] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                        <p className="text-[var(--text-primary)] text-lg">Loading images...</p>
+                        <p className="text-[var(--text-primary)] text-md poppins">Loading images...</p>
                     </div>
                 </div>
             )}

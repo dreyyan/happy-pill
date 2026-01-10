@@ -31,7 +31,7 @@ const Footer = () => {
           title="Opening Time"
           description={[
             "Friday & Saturday | 5:00 P.M. - 4:00 A.M.",
-            "Sunday to Thursday | 5:00 P.M. - 2:00 A.M.",
+            "Sunday - Thursday | 5:00 P.M. - 2:00 A.M.",
           ]}
         />
 

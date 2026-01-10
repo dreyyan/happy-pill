@@ -133,7 +133,7 @@ const Menu = () => {
             sm:grid-cols-2 
             lg:grid-cols-3 
             gap-6 sm:gap-8 lg:gap-10 
-            px-4 sm:px-8
+            px-10 sm:px-8
           ">
             {Object.entries(MenuData[selectedCategory as keyof typeof MenuData]).map(
               ([sectionName, sectionData]) => (
@@ -152,7 +152,7 @@ const Menu = () => {
 
       {/* Menu Items */}
       {section && (
-        <div className="pt-4">
+        <div className="pt-4 px-4">
           <h2 className="text-center text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-8 sm:mb-10">
             {selectedSection.toUpperCase()}
           </h2>

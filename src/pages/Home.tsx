@@ -9,7 +9,12 @@ const Home = () => {
 
     // [HANDLE] Smooth Scroll to Features
     const handleScroll = () => {
-        featuresRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (featuresRef.current) {
+        const yOffset = -200;
+        const y = featuresRef.current.getBoundingClientRect().top + window.scrollY + yOffset;
+
+        window.scrollTo({ top: y, behavior: "smooth" });
+    }
     };
 
     return (
@@ -20,11 +25,11 @@ const Home = () => {
                     backgroundImage: "url('https://media.worldofinteriors.com/photos/669659b0533c3f662614a1a3/4:3/w_2560%2Cc_limit/ora_7.jpg')"
                 }}>
                 {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-black/50"></div>
+                <div className="absolute inset-0 bg-black/60"></div>
                 {/* Body Container */}
                 <div className="relative z-10 flex flex-col items-center">
                     {/* Happy Pill Logo */}
-                    <img src="happy-pill-icon.png" alt="happy-pill-logo" className="w-[204px] h-[113px] mb-4"/>
+                    <img src="happy-pill-icon.png" alt="happy-pill-logo" className="h-[100px] mb-10"/>
                     {/* Hero Text */}
                     <h1 className="text-4xl text-center mb-[24px] text-white drop-shadow-lg">Your Daily Dose of Happiness: Eat, Drink, Vibe, Repeat</h1>
                     {/* Hero Description */}

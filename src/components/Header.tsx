@@ -84,7 +84,7 @@ const Header = () => {
       )}
 
       {/* Spacer to prevent content from being hidden under the sticky header */}
-      <div className="h-[72px] sm:h-[88px]" />
+      <div className="h-[72px] sm:h-[40px]" />
     </>
   );
 };

@@ -34,7 +34,8 @@ const SectionCard: React.FC<CardProps> = ({ sectionName, description, imgSrc, on
             w-full 
             h-full          /* fill the container */
             object-cover    /* crop to fill, maintain aspect ratio */
-            object-center   /* center the crop (you can change to object-top etc.) */
+            object-center
+            aspect-[1/1]
           "
           loading="lazy"
         />

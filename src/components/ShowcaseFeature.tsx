@@ -41,7 +41,7 @@ const ShowcaseFeature: React.FC<ShowcaseFeatureProps> = ({ title, src, descripti
 </div>
 
       {/* Content */}
-      <div className="p-5 sm:p-6 flex flex-col flex-grow">
+      <div className="p-5 pt-3 sm:p-6 flex flex-col flex-grow">
         <h3 className="
           text-xl sm:text-2xl 
           font-bold 
