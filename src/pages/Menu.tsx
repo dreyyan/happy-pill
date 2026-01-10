@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-// Components
-import CategoryCard from "../components/CategoryCard";
-// Data
+// [IMPORT] Data
 import MenuData from "../data/MenuData";
 import SectionCard from "../components/SectionCard";
 import Item from "../components/Item";
+// [IMPORT] Components
+import CategoryCard from "../components/CategoryCard";
 
 const Menu = () => {
   document.title = "Menu | Happy Pill Bar & Resto";
@@ -18,7 +18,7 @@ const Menu = () => {
     ? MenuData[selectedCategory as keyof typeof MenuData]?.[selectedSection]
     : undefined;
 
-  // PRELOAD CATEGORY ICONS ONCE (on mount)
+  // [EFFECT] Preload category icon images on initial render
   useEffect(() => {
     const iconUrls = [
       "food-icon-dark.svg",
@@ -31,7 +31,7 @@ const Menu = () => {
     });
   }, []);
 
-  // PRELOAD MENU ITEM IMAGES WHEN ENTERING A SECTION
+  // [EFFECT] Preload menu item images when section changes
   useEffect(() => {
     if (section) {
       setImageLoading(true);
@@ -64,8 +64,9 @@ const Menu = () => {
         };
       });
     }
-  }, [selectedSection, selectedCategory]);
+  }, [selectedSection, selectedCategory, section]);
 
+  // [HANDLE] Back Button
   const handleBackButton = () => {
     if (selectedSection) {
       setSelectedSection("");
@@ -76,7 +77,7 @@ const Menu = () => {
 
   return (
     <div className="min-h-screen flex flex-col px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative">
-      {/* Full-screen loader only for menu item images */}
+      {/* Full-screen Loader */}
       {imageLoading && (
         <div className="fixed inset-0 bg-[var(--background)]/90 backdrop-blur-sm flex items-center justify-center z-50">
           <div className="text-center">
@@ -93,13 +94,13 @@ const Menu = () => {
         </h1>
       )}
 
-      {/* Back Button */}
+      {/* [BUTTON] Back */}
       {(selectedCategory || selectedSection) && (
         <button
           onClick={handleBackButton}
           className="fixed top-20 sm:top-24 left-4 sm:left-6 rounded-full bg-[var(--text-primary)] p-2 transition duration-300 ease-in-out hover:translate-x-[-4px] cursor-pointer z-10"
         >
-          <img src="back-icon.svg" className="h-8 w-8" alt="Back" />
+          <img src="back-icon.svg" className="h-6 w-6" alt="Back" />
         </button>
       )}
 
@@ -162,7 +163,7 @@ const Menu = () => {
               <Item
                 key={item.name}
                 name={item.name}
-                imgSrc={item.imgSrc || "happy-pill-banner.png"}
+                imgSrc={item.imgSrc}
                 price={item.price}
                 additionalPrice={item.additionalPrice}
                 additionalDetails={item.additionalDetails}

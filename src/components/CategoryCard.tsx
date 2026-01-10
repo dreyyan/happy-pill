@@ -1,6 +1,3 @@
-import { useNavigate } from "react-router-dom";
-import Styles from "../styles/Styles";
-
 interface CardProps {
   text: string;
   iconSrc?: string;

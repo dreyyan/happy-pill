@@ -1,6 +1,3 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import Styles from "../styles/Styles";
 import FooterSection from "./FooterSection";
 
 const Footer = () => {
@@ -32,7 +29,10 @@ const Footer = () => {
         <FooterSection
           iconSrc="opening-time-icon.svg"
           title="Opening Time"
-          description="Friday & Saturday | 5:00 P.M. - 4:00 A.M.\nSunday to Thursday | 5:00 P.M. - 2:00 A.M."
+          description={[
+            "Friday & Saturday | 5:00 P.M. - 4:00 A.M.",
+            "Sunday to Thursday | 5:00 P.M. - 2:00 A.M.",
+          ]}
         />
 
         <FooterSection

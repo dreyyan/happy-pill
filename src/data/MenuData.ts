@@ -287,7 +287,7 @@ const MenuData: MenuDataType = {
     Drinks: {
         "Happy Towers": {
             "description": "Big towers, bigger fun! Shareable cocktail towers perfect for barkada nights.",
-            "imgSrc": "menu/drinks/happy-towers.jpg",
+            "imgSrc": "",
             "items": [
                 {
                     name: "Grapes",

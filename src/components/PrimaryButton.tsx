@@ -2,34 +2,34 @@ interface PrimaryButtonProps {
   text: string;
   onClick?: () => void;
   disabled?: boolean;
-  width?: string;          // still optional for special cases
-  fontSize?: string;       // keep for flexibility
-  borderRadius?: string;   // keep for flexibility
+  width?: string;
+  fontSize?: string;
+  borderRadius?: string;
 }
 
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   text,
   onClick,
   disabled = false,
-  width,                   // only used if explicitly passed
-  fontSize = "clamp(12px, 2.5vw, 14px)", // responsive font size
-  borderRadius = "4px",    // default to a small radius instead of 0
+  width,
+  fontSize = "clamp(12px, 2.5vw, 14px)",
+  borderRadius = "0px",
 }) => {
   return (
     <button
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
       style={{
-        width: width || "auto",           // auto by default → responsive
-        minWidth: "140px",                // minimum comfortable size on mobile
-        maxWidth: "240px",                // prevent it from becoming too wide
+        width: width || "auto",
+        minWidth: "140px",
+        maxWidth: "240px",
         fontSize,
         borderRadius,
       }}
       className={`
         header-nav-link
         flex justify-center items-center
-        px-4 py-2                 /* more comfortable padding */
+        px-4 py-2
         text-[var(--text-primary)]
         border-2 border-[var(--text-primary)]
         hover:border-[var(--primary)]
@@ -39,7 +39,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
         cursor-pointer
         disabled:opacity-50
         disabled:cursor-not-allowed
-        whitespace-nowrap           /* prevent text wrapping */
+        whitespace-nowrap
       `}
     >
       {text}

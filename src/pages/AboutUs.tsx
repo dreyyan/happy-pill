@@ -1,14 +1,8 @@
-import { useNavigate } from "react-router-dom";
-import Header from "../components/Header";
-import SecondaryButton from "../components/SecondaryButton";
-import Styles from "../styles/Styles";
-
 const AboutUs = () => {
   document.title = "About Us | Happy Pill Bar & Resto";
-  const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+    <div className="min-h-screen flex flex-col px-10 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
       {/* Page Title */}
       <h1 className="text-center text-3xl sm:text-4xl lg:text-5xl font-bold mb-10 sm:mb-12 lg:mb-16 text-[var(--text-primary)]">
         ABOUT US
@@ -20,7 +14,7 @@ const AboutUs = () => {
         <div className="text-center">
           {/* Placeholder image - add your actual src when ready */}
           <img
-            src="" // ← replace with actual image path
+            src="gallery/christmas_new_year/7.jpg"
             alt="Happy Pill Welcome"
             className="w-full max-w-md mx-auto rounded-lg shadow-lg mb-6"
           />

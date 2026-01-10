@@ -1,6 +1,3 @@
-import { useNavigate } from "react-router-dom";
-import Styles from "../styles/Styles";
-
 interface CardProps {
   sectionName: string;
   description: string;
@@ -27,15 +24,22 @@ const SectionCard: React.FC<CardProps> = ({ sectionName, description, imgSrc, on
         mx-auto
       "
     >
-      {/* Image - remove default bottom gap */}
-      {imgSrc && (
+      
+    {imgSrc && (
+      <div className="w-full h-[180px] sm:h-[220px] lg:h-[260px] overflow-hidden rounded-t-sm">
         <img
           src={imgSrc}
           alt={sectionName}
-          className="w-full h-auto rounded-t-sm block"  // block → removes ~4px default gap
+          className="
+            w-full 
+            h-full          /* fill the container */
+            object-cover    /* crop to fill, maintain aspect ratio */
+            object-center   /* center the crop (you can change to object-top etc.) */
+          "
           loading="lazy"
         />
-      )}
+      </div>
+    )}
 
       {/* Title */}
       <h4 className="
@@ -52,12 +56,12 @@ const SectionCard: React.FC<CardProps> = ({ sectionName, description, imgSrc, on
 
       {/* Description */}
         <p className="
-        text-xs sm:text-sm               /* smaller on mobile, slightly larger on tablet+ */
+        text-xs sm:text-sm
         leading-snug
         text-[var(--text-primary)]
-        max-w-[280px] sm:max-w-[300px] lg:max-w-[340px]   /* scales with screen */
+        max-w-[280px] sm:max-w-[300px] lg:max-w-[340px]
         break-words
-        text-center                     /* optional but improves readability */
+        text-center
         ">
         {description}
       </p>

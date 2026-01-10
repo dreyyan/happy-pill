@@ -52,7 +52,7 @@ const Header = () => {
       {/* [MOBILE] Navigation Links - Overlay */}
       {open && (
         <div className="sm:hidden fixed top-0 left-0 w-full h-screen bg-black/90 z-50 flex flex-col justify-center items-center gap-y-6 text-md header-nav-link">
-          {/* CLOSE BUTTON */}
+          {/* [BUTTON] Close */}
           <button
             onClick={() => setOpen(false)}
             className="absolute top-4 right-5 text-2xl text-white cursor-pointer"

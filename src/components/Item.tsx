@@ -1,7 +1,4 @@
-// Data
-import type { MenuItem } from "../data/MenuData";
-
-const Item: React.FC<MenuItem> = ({
+const Item: React.FC<MenuItem & { isSelected?: boolean }> = ({
   name,
   imgSrc,
   price,
@@ -10,69 +7,90 @@ const Item: React.FC<MenuItem> = ({
   description,
   onClick,
   variants,
+  isSelected = false,  // ← new optional prop
 }) => {
   return (
     <button
       onClick={onClick}
-      className="
+      className={`
         group
-        flex flex-col justify-start items-start
-        h-auto rounded-lg
+        flex flex-col
+        h-full rounded-xl overflow-hidden
         bg-[var(--card)]
-        transition duration-300 ease-in-out
-        hover:bg-[var(--accent)]
-        hover:translate-y-[-3px]
+        transition-all duration-300 ease-out
+        hover:bg-[var(--accent)]/5
+        hover:shadow-xl
+        hover:-translate-y-1.5
         cursor-pointer
-        w-full max-w-[420px] mx-auto
-        overflow-hidden
-      "
+        w-full
+        shadow-sm
+        ${isSelected 
+          ? 'border-2 border-[var(--accent)]' 
+          : 'border border-[var(--card-border)]/40'
+        }
+      `}
     >
-      {/* Image */}
-      <div className="w-full overflow-hidden bg-[var(--background)]">
+      {/* Image - better responsive height */}
+      <div className="relative w-full aspect-[4/3] sm:aspect-[5/4] overflow-hidden bg-[var(--background)]">
         <img
-          src={imgSrc || "happy-pill-banner.png"}
+          src={imgSrc}
           alt={name}
-          className="
-            w-full h-auto max-h-48 sm:max-h-60
+          className={`
+            w-full h-full
             object-cover
-            transition-transform duration-500
+            transition-transform duration-700
             group-hover:scale-105
-          "
+            flex justify-center items-center
+            text-[var(--text-secondary)]
+          `}
           loading="lazy"
         />
       </div>
-
-      {/* Content */}
-      <div className="px-4 sm:px-5 pt-3 sm:pt-4 pb-4 sm:pb-5 w-full space-y-3 sm:space-y-4">
+      {/* Content - much better scaling */}
+      <div className="p-4 sm:p-5 lg:p-6 flex flex-col flex-grow space-y-3 sm:space-y-4">
         {/* Name */}
-        <h6 className="font-semibold text-base sm:text-lg leading-tight text-[var(--text-primary)]">
+        <p className="
+          font-semibold
+          text-base sm:text-lg lg:text-xl
+          leading-tight
+          text-[var(--text-primary)]
+        ">
           {name}
-        </h6>
-
-        {/* Description */}
+        </p>
+        {/* Description - remove clamp on larger screens */}
         {description && (
-          <p className="text-xs sm:text-sm leading-snug text-[var(--text-secondary)] line-clamp-2">
+          <p className="
+            text-sm sm:text-base
+            leading-relaxed
+            text-[var(--text-secondary)]
+            line-clamp-3 sm:line-clamp-none
+          ">
             {description}
           </p>
         )}
-
         {/* Price & Details */}
-        <div className="space-y-2 text-sm sm:text-base">
-          <div className="flex justify-between items-baseline">
-            <span className="text-xs sm:text-sm text-[var(--text-secondary)]">
-              {additionalDetails?.[0] || ""}
+        <div className={`
+          mt-auto
+          ${ (additionalPrice !== undefined || (variants && variants.length > 0)) 
+            ? 'pt-2 border-t-1 border-[var(--text-primary)]/60 space-y-2.5' 
+            : '' 
+          }
+        `}>
+          <div className="flex justify-between items-baseline gap-3">
+            <span className="text-sm sm:text-sm text-[var(--text-secondary)]">
+              {additionalDetails?.[0] || " "}
             </span>
-            <span className="font-bold text-[var(--price-main)]">
+            <span className="font-bold text-lg sm:text-xl text-[var(--price-main)]">
               ₱{price.toFixed(2)}
             </span>
           </div>
 
           {additionalPrice !== undefined && (
-            <div className="flex justify-between items-baseline">
-              <span className="text-xs sm:text-sm text-[var(--text-secondary)]">
-                {additionalDetails?.[1] || ""}
+            <div className="flex justify-between items-baseline gap-3">
+              <span className="text-sm font-bold sm:text-sm text-[var(--text-secondary)]">
+                {additionalDetails?.[1] || " "}
               </span>
-              <span className="font-bold text-[var(--price-secondary)]">
+              <span className="font-bold text-base sm:text-lg text-[var(--price-secondary)]">
                 ₱{additionalPrice.toFixed(2)}
               </span>
             </div>
@@ -81,17 +99,18 @@ const Item: React.FC<MenuItem> = ({
 
         {/* Variants */}
         {variants && variants.length > 0 && (
-          <div className="flex flex-wrap gap-2 pt-2">
-            {variants.map((variant, index) => (
+          <div className="flex flex-wrap gap-2 pt-3">  {/* ← pt-3 when it exists */}
+            {variants.map((variant, i) => (
               <span
-                key={index}
+                key={i}
                 className="
                   px-2.5 py-1
-                  text-xs sm:text-sm font-medium
-                  rounded-md
-                  bg-[var(--accent)]/20
-                  text-[var(--text-primary)]
-                  border border-[var(--accent)]/30
+                  text-xs sm:text-sm
+                  font-medium
+                  rounded-full
+                  bg-[var(--accent)]/10
+                  text-[var(--accent)]
+                  border border-[var(--accent)]/20
                 "
               >
                 {variant}
@@ -103,5 +122,4 @@ const Item: React.FC<MenuItem> = ({
     </button>
   );
 };
-
 export default Item;
