@@ -51,7 +51,7 @@ const MenuData: MenuDataType = {
                 { 
                     name: "Chicken Skin", 
                     price: 210.00,
-                    imgSrc: "menu/food/appetizers.png"
+                    imgSrc: "menu/food/chicken-skin.png"
                 },
                 { 
                     name: "Nachos", 
@@ -117,8 +117,8 @@ const MenuData: MenuDataType = {
                 price: 230.00,
                 imgSrc: "menu/food/fried-chix.png",
                 additionalPrice: 310.00,
-                additionalDetails: ["/wo Fries/Mojos", "/w Fries/Mojos"],
-                variants: ["/wo Fries/Mojos", "/w Fries/Mojos"]
+                additionalDetails: ["w/o Fries/Mojos", "w/ Fries/Mojos"],
+                variants: ["w/o Fries/Mojos", "w/ Fries/Mojos"]
             },
             ]
         },
@@ -212,7 +212,7 @@ const MenuData: MenuDataType = {
                 { 
                     name: "Sweet & Sour Tofu /w Rice", 
                     price: 140.00,
-                    imgSrc: "menu/food/budget-sweet-and-sour-tofu.jpg",
+                    imgSrc: "menu/food/budget-sweet-and-sour-tofu.png",
                 },
                 { 
                     name: "Sizzling Tofu /w Rice", 
@@ -340,28 +340,28 @@ const MenuData: MenuDataType = {
                     quantity: "1.5L",
                     imgSrc: "menu/drinks/clvb-emperador.png",
                     additionalPrice: 600.00,
-                    additionalDetails: ["/wo Iced Tea & Kropek", "/w Iced Tea & Kropek"],
-                    variants: ["/wo Iced Tea & Kropek", "/w Iced Tea & Kropek"]
+                    additionalDetails: ["w/o Iced Tea & Kropek", "w/ Iced Tea & Kropek"],
+                    variants: ["w/o Iced Tea & Kropek", "w/ Iced Tea & Kropek"]
                 },
                 {
                     name: "Charles & James",
                     price: 500.00,
                     imgSrc: "menu/drinks/charles-and-james.png",
-                    additionalDetails: ["/w Iced Tea & Kropek"]
+                    additionalDetails: ["w/ Iced Tea & Kropek"]
                 },
                 {
                     name: "Andy Player",
                     price: 500.00,
                     quantity: "2 bottles",
                     imgSrc: "menu/drinks/andy-player.png",
-                    additionalDetails: ["/w Iced Tea & Kropek"]
+                    additionalDetails: ["w/ Iced Tea & Kropek"]
                 },
                 {
                     name: "Primera",
                     price: 500.00,
                     quantity: "1L",
                     imgSrc: "menu/drinks/primera-light.png",
-                    additionalDetails: ["/w Iced Tea & Kropek"]
+                    additionalDetails: ["w/ Iced Tea & Kropek"]
                 },
                 {
                     name: "Alhambra Solera Light",

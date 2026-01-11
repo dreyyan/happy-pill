@@ -48,40 +48,90 @@ const Home = () => {
             </div>
 
             {/* Showcase Features */}
-<div
-  ref={featuresRef}
-  className={`
-    grid
-    grid-cols-1             // mobile
-    md:grid-cols-2          // tablet (~≥768px)
-    lg:grid-cols-3          // desktop (≥1024px) ← added
-    gap-8                   // 2rem – good middle ground
-    lg:gap-10               // slightly bigger on very large screens
-    xl:gap-12               // optional: generous on ultra-wide
-    justify-items-center
-    max-w-7xl               // ← very helpful! prevents cards from spreading too wide
-    mx-auto                 // center the whole grid
-    my-10                   // vertical spacing around the section
-    px-6 sm:px-10 lg:px-8   // responsive padding
-  `}
->
-            <ShowcaseFeature
-                title="Crafted Cocktails"
-                src="showcase-1.png"
-                description="Expertly mixed signature drinks with premium spirits and fresh ingredients – your prescription for happiness."
-            />
-            
-            <ShowcaseFeature
-                title="Gourmet Bites & Sharing Plates"
-                src="showcase-2.png"
-                description="Delicious, elevated food designed for sharing – from bold flavors to comforting classics."
-            />
-            
-            <ShowcaseFeature
-                title="Live Music & Events"
-                src="showcase-3.png"
-                description="Unforgettable nights with local artists, bands, and themed parties – the heart of Iloilo nightlife."
-            />
+            <div
+            ref={featuresRef}
+            className={`
+                grid
+                grid-cols-1             // mobile
+                md:grid-cols-2          // tablet (~≥768px)
+                lg:grid-cols-3          // desktop (≥1024px) ← added
+                gap-8                   // 2rem – good middle ground
+                lg:gap-10               // slightly bigger on very large screens
+                xl:gap-12               // optional: generous on ultra-wide
+                justify-items-center
+                max-w-7xl               // ← very helpful! prevents cards from spreading too wide
+                mx-auto                 // center the whole grid
+                my-10                   // vertical spacing around the section
+                px-6 sm:px-10 lg:px-8   // responsive padding
+            `}
+            >
+                <ShowcaseFeature
+                    title="Crafted Cocktails"
+                    src="showcase-1.png"
+                    description="Expertly mixed signature drinks with premium spirits and fresh ingredients – your prescription for happiness."
+                />
+                
+                <ShowcaseFeature
+                    title="Gourmet Bites & Sharing Plates"
+                    src="showcase-2.png"
+                    description="Delicious, elevated food designed for sharing – from bold flavors to comforting classics."
+                />
+                
+                <ShowcaseFeature
+                    title="Live Music & Events"
+                    src="showcase-3.png"
+                    description="Unforgettable nights with local artists, bands, and themed parties – the heart of Iloilo nightlife."
+                />
+            </div>
+            {/* Hook + GrabFood CTA */}
+            <div className="flex flex-col items-center gap-5 mb-10">
+            <p className="text-md md:text-lg font-bold text-white drop-shadow-lg tracking-wide">
+                Craving hits hard? Get your Happy Pill fix delivered fast on...
+            </p>
+
+            <a
+                href="https://food.grab.com/ph/en/restaurant/happy-pill-bar-and-resto-g-park-delivery/2-C62GWCC3BB31AX"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-block"
+            >
+                <button
+                type="button"
+                className={`
+                    bg-[#00B14F]              /* GrabFood signature green */
+                    hover:bg-[#00A040]         /* darker green on hover */
+                    active:bg-[#009935]
+                    text-white
+                    font-bold
+                    text-sm md:text-xs
+                    px-2 py-3
+                    rounded-full
+                    shadow-lg
+                    shadow-black/30
+                    transition-all duration-300
+                    transform
+                    group-hover:scale-105
+                    group-active:scale-95
+                    flex items-center justify-center gap-3
+                    min-w-[220px]
+                    border-2 border-white/20
+                `}
+                >
+                {/* <img src="/grabfood-logo.png" alt="GrabFood" className="h-7 w-auto" /> */}
+                
+                ORDER ON GRABFOOD
+                
+                {/* Arrow for direction */}
+                <svg 
+                    className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+                </button>
+            </a>
             </div>
         </PageTransition>
     );

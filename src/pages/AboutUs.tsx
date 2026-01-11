@@ -178,7 +178,7 @@ const AboutUs = () => {
                 className="w-full max-h-[500px] object-cover rounded-lg shadow-md mx-auto mb-4"
               />
               <p className="text-xl sm:text-2xl font-bold text-center mt-12 text-[var(--text-primary)]">
-                Thank you for choosing Happy-Pill!<br />
+                Thank you for choosing Happy-Pill - Bar & Resto!<br />
                 <span className="text-[var(--accent)] text-sm italic font-[600]">- The Happy Pill Staff</span>
               </p>
           </section>
