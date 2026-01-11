@@ -21,7 +21,7 @@ const Home = () => {
     return (
         <PageTransition>
             <div
-                className="flex flex-col items-center px-[32px] py-[24px] bg-cover bg-center relative mt-4 mb-40"
+                className="flex flex-col items-center px-[32px] py-[24px] bg-cover bg-center relative mt-4 mb-20"
                 style={{
                     backgroundImage: "url('hero-background.png')"
                 }}>
@@ -48,21 +48,23 @@ const Home = () => {
             </div>
 
             {/* Showcase Features */}
-            <div 
-            ref={featuresRef} 
-            className="
-                grid 
-                grid-cols-1          // default: 1 column (mobile)
-                md:grid-cols-2       // ≥768px: 2 columns
-                gap-12               // space between cards
-                justify-items-center
-                my-10
-                mx-40
-                md:px-[0px]
-                mb-40 
-                px-6 sm:px-12
-            "
-            >
+<div
+  ref={featuresRef}
+  className={`
+    grid
+    grid-cols-1             // mobile
+    md:grid-cols-2          // tablet (~≥768px)
+    lg:grid-cols-3          // desktop (≥1024px) ← added
+    gap-8                   // 2rem – good middle ground
+    lg:gap-10               // slightly bigger on very large screens
+    xl:gap-12               // optional: generous on ultra-wide
+    justify-items-center
+    max-w-7xl               // ← very helpful! prevents cards from spreading too wide
+    mx-auto                 // center the whole grid
+    my-10                   // vertical spacing around the section
+    px-6 sm:px-10 lg:px-8   // responsive padding
+  `}
+>
             <ShowcaseFeature
                 title="Crafted Cocktails"
                 src="showcase-1.png"
