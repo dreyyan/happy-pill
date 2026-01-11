@@ -57,7 +57,8 @@ const Home = () => {
                 gap-12               // space between cards
                 justify-items-center
                 my-10
-                mx-30
+                mx-40
+                md:px-[0px]
                 mb-40 
                 px-6 sm:px-12
             "

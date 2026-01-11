@@ -16,6 +16,7 @@ const ShowcaseFeature: React.FC<ShowcaseFeatureProps> = ({ title, src, descripti
       hover:shadow-2xl 
       hover:scale-[1.02]
       max-w-[400px]
+      lg:my-2
     ">
       {/* Image - responsive with proper aspect ratio */}
 <div className="
