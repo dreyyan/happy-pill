@@ -50,6 +50,12 @@ const AboutUs = () => {
                 One of the hearts behind Happy-Pill is Wilan Rodriguez, an OFW and my business partner. Like many modern-day heroes, Wilan left his family to work abroad—not for luxury, but for love. In Dubai, he worked as a barista and took on whatever jobs were available, just to make sure he could send money home. Every peso he earned carried sacrifice. Every day meant endurance. Every night came with homesickness.
               </p>
 
+              <img
+                src="gallery/about-us-4.png"
+                alt="Ronald and Wilan"
+                className="w-full max-h-[500px] object-cover rounded-lg shadow-md mx-auto mb-8"
+              />
+
               <p className="mb-8 caption text-sm sm:text-base leading-relaxed px-2 text-[var(--text-secondary)]">
                 After long working hours, Wilan would walk from work back to his apartment—tired, missing home, yet still holding on. Along that daily walk, he would always pass by a place called Happiness Street. Simple as it sounded, that street meant everything to him. Seeing the name alone lifted his spirit. It reminded him to think positively, to keep going, and to believe that better days were ahead. Happiness Street became his silent companion—a reminder that joy is a choice, even in the hardest seasons.
               </p>
