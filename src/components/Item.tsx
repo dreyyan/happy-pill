@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { MenuItem } from "../data/MenuData";
 
 const Item: React.FC<MenuItem & { isSelected?: boolean }> = ({
   name,
