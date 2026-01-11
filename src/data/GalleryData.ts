@@ -60,4 +60,9 @@ export const galleryCategories: GalleryCategory[] = [
     label: "Cafe",
     images: Array.from({ length: 13 }, (_, i) => `${i + 1}.jpg`),
   },
+  {
+    key: "dinagyang-2025",
+    label: "Dinagyang - 2025",
+    images: Array.from({ length: 13 }, (_, i) => `${i + 1}.jpg`),
+  },
 ];
