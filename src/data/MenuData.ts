@@ -105,12 +105,12 @@ const MenuData: MenuDataType = {
             { 
                 name: "Buttered Chicken", 
                 price: 260.00,
-                imgSrc: "",
+                imgSrc: "menu/food/buttered-chicken.png",
             },
             { 
                 name: "Chicken Teriyaki", 
                 price: 260.00,
-                imgSrc: "",
+                imgSrc: "menu/food/chicken-teriyaki.png",
             },
             { 
                 name: "Fried Chix", 
@@ -161,11 +161,6 @@ const MenuData: MenuDataType = {
                     name: "Fish Fillet", 
                     price: 210.00,
                     imgSrc: "menu/food/fish-fillet.png",
-                },
-                {
-                    name: "Sinigang Bangus", 
-                    price: 410.00,
-                    imgSrc: "",
                 },
                 {
                     name: "Sizzling Sisig Bangus", 
@@ -273,7 +268,7 @@ const MenuData: MenuDataType = {
                 { 
                     name: "Cornsilog", 
                     price: 130.00,
-                    imgSrc: ""
+                    imgSrc: "menu/food/cornsilog.png"
                 },
                 { 
                     name: "Tocilog", 
@@ -283,7 +278,7 @@ const MenuData: MenuDataType = {
                 { 
                     name: "Tapsilog", 
                     price: 140.00,
-                    imgSrc: "menu/food/yumsilog.png"
+                    imgSrc: "menu/food/tapsilog.png"
                 },
             ]
         },
@@ -331,19 +326,19 @@ const MenuData: MenuDataType = {
                     name: "Jinro Soju Grapefruit",
                     price: 200.00,
                     quantity: "360 mL",
-                    imgSrc: "menu/drinks/jinro-soju-grapefruit.jpg"
+                    imgSrc: "menu/drinks/jinro-soju-grapefruit.png"
                 },
                 {
                     name: "Clvb Emperador",
                     price: 450.00,
                     quantity: "750mL",
-                    imgSrc: "menu/drinks/clvb-emperador.jpg",
+                    imgSrc: "menu/drinks/clvb-emperador.png",
                 },
                 {
                     name: "Clvb Emperador",
                     price: 450.00,
                     quantity: "1.5L",
-                    imgSrc: "menu/drinks/clvb-emperador.jpg",
+                    imgSrc: "menu/drinks/clvb-emperador.png",
                     additionalPrice: 600.00,
                     additionalDetails: ["/wo Iced Tea & Kropek", "/w Iced Tea & Kropek"],
                     variants: ["/wo Iced Tea & Kropek", "/w Iced Tea & Kropek"]
@@ -351,7 +346,7 @@ const MenuData: MenuDataType = {
                 {
                     name: "Charles & James",
                     price: 500.00,
-                    imgSrc: "menu/drinks/charles-and-james.jpg",
+                    imgSrc: "menu/drinks/charles-and-james.png",
                     additionalDetails: ["/w Iced Tea & Kropek"]
                 },
                 {
@@ -372,73 +367,53 @@ const MenuData: MenuDataType = {
                     name: "Alhambra Solera Light",
                     price: 650.00,
                     quantity: "1L",
-                    imgSrc: "menu/drinks/alhambra-solera-light.webp"
+                    imgSrc: "menu/drinks/alhambra-solera-light.png"
                 },
                 {
-                    name: "Alfonso Light",
+                    name: "Alfonso I Light",
                     price: 680.00,
                     quantity: "1L",
-                    imgSrc: "menu/drinks/alfonso-light.jpg"
+                    imgSrc: "menu/drinks/alfonso-i-light.png"
                 },
                 {
                     name: "Fundador Super Special",
                     price: 720.00,
                     quantity: "1L",
-                    imgSrc: "menu/drinks/fundador-super-special.webp"
+                    imgSrc: "menu/drinks/fundador-super-special.png"
                 },
                 {
                     name: "Carlos I Light",
                     price: 780.00,
-                    imgSrc: "menu/drinks/carlos-I-light.jpg"
+                    imgSrc: "menu/drinks/carlos-i-light.png"
                 },
                 {
                     name: "Fundador Light",
                     price: 750.00,
-                    imgSrc: "menu/drinks/fundador-light.webp"
+                    imgSrc: "menu/drinks/fundador-light.png"
                 },
-                // {
-                //     name: "Smirnoff Vodka",
-                //     price: 1060.00,
-                //     imgSrc: "menu/drinks/smirnoff-vodka.jpg"
-                // },
-                // {
-                //     name: "Absolut Vodka",
-                //     price: 1198.00,
-                //     quantity: "700 mL",
-                //     imgSrc: "menu/drinks/absolut-vodka.jpg"
-                // },
-                // {
-                //     name: "Bacardi White Rum",
-                //     price: 1260.00,
-                //     imgSrc: "menu/drinks/bacardi-white-rum.jpg"
-                // },
                 {
                     name: "Jose Cuervo Tequila",
                     price: 1900.00,
-                    quantity: "700mL",
-                    imgSrc: "menu/drinks/jose-cuervo-tequila.jpg"
-                },
-                {
-                    name: "Jose Cuervo Tequila",
-                    price: 2300.00,
-                    quantity: "1L",
-                    imgSrc: "menu/drinks/jose-cuervo-tequila.jpg"
+                    additionalPrice: 2300.00,
+                    variants: ["700mL", "1L"],
+                    additionalDetails: ["700mL", "1L"],
+                    imgSrc: "menu/drinks/jose-cuervo-tequila.png"
                 },
                 {
                     name: "Jim Beam",
                     price: 1880.00,
                     quantity: "1L",
-                    imgSrc: "menu/drinks/jim-beam.webp"
+                    imgSrc: "menu/drinks/jim-beam.png"
                 },
                 {
                     name: "Johnnie Walker Red Label",
                     price: 1550.00,
-                    imgSrc: "menu/drinks/johnnie-walker-red-label.webp"
+                    imgSrc: "menu/drinks/johnnie-walker-red-label.png"
                 },
                 {
                     name: "Johnny Walker Black Label",
                     price: 2400.00,
-                    imgSrc: "menu/drinks/johnnie-walker-black-label.webp"
+                    imgSrc: "menu/drinks/johnnie-walker-black-label.png"
                 },
                 {
                     name: "Johnny Walker Double Black",
@@ -446,37 +421,37 @@ const MenuData: MenuDataType = {
                     imgSrc: "menu/drinks/johnnie-walker-double-black.png"
                 },
                 {
-                    name: "Chivais Regal",
+                    name: "Chivas Regal",
                     price: 2130.00,
                     quantity: "700 mL",
-                    imgSrc: "menu/drinks/chivais-regal.png"
+                    imgSrc: "menu/drinks/chivas-regal.png"
                 },
                 {
                     name: "Jack Daniel's Whiskey",
                     price: 2250.00,
                     quantity: "700 mL",
-                    imgSrc: "menu/drinks/jack-daniels-whiskey.webp"
+                    imgSrc: "menu/drinks/jack-daniels-whiskey.png"
                 },
                 {
                     name: "Tanduay Light",
                     price: 300.00,
                     additionalPrice: 550.00,
                     additionalDetails: ["1 bottle", "2 bottles"],
-                    imgSrc: "menu/drinks/tanduay-light.webp"
+                    imgSrc: "menu/drinks/tanduay-light.png"
                 },
                 {
                     name: "Tanduay Select",
                     price: 350.00,
                     additionalPrice: 600.00,
                     additionalDetails: ["1 bottle", "2 bottles"],
-                    imgSrc: "menu/drinks/tanduay-select.webp"
+                    imgSrc: "menu/drinks/tanduay-select.png"
                 },
                 {
-                    name: "Tanduay Flavored",
+                    name: "Tanduay - Flavored Mix",
                     price: 280.00,
                     additionalPrice: 500.00,
                     additionalDetails: ["1 bottle", "2 bottles"],
-                    imgSrc: "menu/drinks/tanduay-flavored.jpg"
+                    imgSrc: "menu/drinks/tanduay-flavored-mix.png"
                 },
             ]
         },
@@ -489,56 +464,56 @@ const MenuData: MenuDataType = {
                     price: 90.00,
                     additionalPrice: 520.00,
                     additionalDetails: ["1 bottle", "1 bucket (5 bottles + 1 bottle or finger food of choice)"],
-                    imgSrc: "menu/drinks/bucket-san-mig-light.jpg"
+                    imgSrc: "menu/drinks/bucket-san-mig-light.png"
                 },
                 {
                     name: "San Mig Apple",
                     price: 90.00,
                     additionalPrice: 520.00,
                     additionalDetails: ["1 bottle", "1 bucket (5 bottles + 1 bottle or finger food of choice)"],
-                    imgSrc: "menu/drinks/bucket-san-mig-apple.jpg"
+                    imgSrc: "menu/drinks/bucket-san-mig-apple.png"
                 },
                 {
                     name: "San Mig Pilsen",
                     price: 90.00,
                     additionalPrice: 520.00,
                     additionalDetails: ["1 bottle", "1 bucket (5 bottles + 1 bottle or finger food of choice)"],
-                    imgSrc: "menu/drinks/bucket-san-mig-pilsen.jpg"
+                    imgSrc: "menu/drinks/bucket-san-mig-pilsen.png"
                 },
                 {
-                    name: "Stallion",
+                    name: "Red Horse Stallion",
                     price: 90.00,
                     additionalPrice: 520.00,
                     additionalDetails: ["1 bottle", "1 bucket (5 bottles + 1 bottle or finger food of choice)"],
-                    imgSrc: "menu/drinks/bucket-stallion.jpg"
+                    imgSrc: "menu/drinks/bucket-red-horse-stallion.png"
                 },
                 {
-                    name: "RH",
+                    name: "Red Horse 500",
                     price: 110.00,
                     additionalPrice: 640.00,
                     quantity: "500 mL",
                     additionalDetails: ["1 bottle", "1 bucket (5 bottles + 1 bottle or finger food of choice)"],
-                    imgSrc: "menu/drinks/bucket-rh-500.jpg"
+                    imgSrc: "menu/drinks/bucket-red-horse-500.png"
                 },
                 {
-                    name: "RH",
+                    name: "RH Litro",
                     price: 200.00,
                     quantity: "1L",
-                    imgSrc: "menu/drinks/rh-1L.jpeg"
+                    imgSrc: "menu/drinks/rh-1l.png"
                 },
                 {
                     name: "Tanduay Ice - Mix",
                     price: 75.00,
                     additionalPrice: 420.00,
                     additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"],
-                    imgSrc: "menu/drinks/bucket-tanduay-ice-mix.jpg"
+                    imgSrc: "menu/drinks/tanduay-ice-mix.png"
                 },
                 {
                     name: "Mule Smirnoff",
                     price: 100.00,
                     additionalPrice: 575.00,
                     additionalDetails: ["1 bottle", "5 bottles + 1 bottle or finger food of choice"],
-                    imgSrc: "menu/drinks/bucket-mule-smirnoff.jpg"
+                    imgSrc: "menu/drinks/bucket-mule-smirnoff.png"
                 },
                 // {
                 //     name: "San Mig Flavored Mix",
@@ -555,7 +530,7 @@ const MenuData: MenuDataType = {
                 {
                     name: "Cucumber Shake",
                     price: 120.00,
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/cucumber-shake.png"
                 },
                 {
                     name: "Mango Shake",
@@ -565,7 +540,7 @@ const MenuData: MenuDataType = {
                 {
                     name: "Mango Graham Shake",
                     price: 120.00,
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/mango-graham-shake.png"
                 },
                 {
                     name: "Strawberry Shake",
@@ -575,7 +550,7 @@ const MenuData: MenuDataType = {
                 {
                     name: "Cookies 'n Cream Shake",
                     price: 120.00,
-                    imgSrc: "menu/drinks/cookies-n-cream-shake.png"
+                    imgSrc: "menu/drinks/cookies-and-cream-shake.png"
                 },
             ]
         },
@@ -586,44 +561,44 @@ const MenuData: MenuDataType = {
                 {
                     name: "Royal Sakto",
                     price: 20.00,
-                    imgSrc: "menu/drinks/royal-sakto.webp"
+                    imgSrc: "menu/drinks/royal-sakto.png"
                 },
                 {
                     name: "Sprite Sakto",
                     price: 20.00,
-                    imgSrc: "menu/drinks/sprite-sakto.webp"
+                    imgSrc: "menu/drinks/sprite-sakto.png"
                 },
                 {
                     name: "Coke Sakto",
                     price: 20.00,
-                    imgSrc: "menu/drinks/coke-sakto.jpg"
+                    imgSrc: "menu/drinks/coke-sakto.png"
                 },
                 {
                     name: "Coke",
                     price: 160.00,
                     quantity: "1.5L",
-                    imgSrc: "menu/drinks/coke-1.5L.webp"
+                    imgSrc: "menu/drinks/coke-1.5l.png"
                 },
             ]
         },
         "Everyday Refreshments": {
             "description": "Light and refreshing drinks for everyday thirst-quenching moments.",
-            "imgSrc": "menu/drinks/bottled-water.webp",
+            "imgSrc": "menu/drinks/everyday-refreshments.png",
             "items": [
                 {
                     name: "Bottled Water",
                     price: 25.00,
-                    imgSrc: "menu/drinks/bottled-water.webp"
+                    imgSrc: "menu/drinks/bottled-water.png"
                 },
                 {
                     name: "Iced Tea Pitcher",
                     price: 100.00,
-                    imgSrc: "menu/drinks/iced-tea-pitcher.jpg"
+                    imgSrc: "menu/drinks/iced-tea-pitcher.png"
                 },
                 {
                     name: "Cucumber Pitcher",
                     price: 100.00,
-                    imgSrc: ""
+                    imgSrc: "menu/drinks/cucumber-pitcher.png"
                 },
             ]
         },
@@ -634,32 +609,32 @@ const MenuData: MenuDataType = {
                 {
                     name: "Moscow Mule",
                     price: 180.00,
-                    imgSrc: "menu/drinks/moscow-mule.jpg"
+                    imgSrc: "menu/drinks/moscow-mule.png"
                 },
                 {
                     name: "Mexican Mule",
                     price: 180.00,
-                    imgSrc: "menu/drinks/mexican-mule.jpg"
+                    imgSrc: "menu/drinks/mexican-mule.png"
                 },
                 {
                     name: "Kentucky Mule",
                     price: 180.00,
-                    imgSrc: "menu/drinks/kentucky-mule.jpg"
+                    imgSrc: "menu/drinks/kentucky-mule.png"
                 },
                 {
                     name: "Margarita",
                     price: 200.00,
-                    imgSrc: "menu/drinks/margarita.jpg"
+                    imgSrc: "menu/drinks/margarita.png"
                 },
                 {
                     name: "Rhumcoke",
                     price: 110.00,
-                    imgSrc: "menu/drinks/rhumcoke.jpg"
+                    imgSrc: "menu/drinks/rhumcoke.png"
                 },
                 {
                     name: "Gintonic",
                     price: 110.00,
-                    imgSrc: "menu/drinks/gintonic.jpg"
+                    imgSrc: "menu/drinks/gintonic.png"
                 },
             ]
         },

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useRef } from "react"; // For smooth scroll
 import PrimaryButton from "../components/PrimaryButton";
 import ShowcaseFeature from "../components/ShowcaseFeature";
+import PageTransition from "../PageTransition";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -18,11 +19,11 @@ const Home = () => {
     };
 
     return (
-        <>
+        <PageTransition>
             <div
-                className="flex flex-col items-center px-[32px] py-[80px] bg-cover bg-center relative mt-4 mb-40"
+                className="flex flex-col items-center px-[32px] py-[24px] bg-cover bg-center relative mt-4 mb-40"
                 style={{
-                    backgroundImage: "url('https://media.worldofinteriors.com/photos/669659b0533c3f662614a1a3/4:3/w_2560%2Cc_limit/ora_7.jpg')"
+                    backgroundImage: "url('hero-background.png')"
                 }}>
                 {/* Dark Overlay */}
                 <div className="absolute inset-0 bg-black/60"></div>
@@ -56,7 +57,7 @@ const Home = () => {
                 gap-12               // space between cards
                 justify-items-center
                 my-10
-                mx-20
+                mx-30
                 mb-40 
                 px-6 sm:px-12
             "
@@ -79,7 +80,7 @@ const Home = () => {
                 description="Unforgettable nights with local artists, bands, and themed parties – the heart of Iloilo nightlife."
             />
             </div>
-        </>
+        </PageTransition>
     );
 };
 

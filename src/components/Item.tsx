@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Item: React.FC<MenuItem & { isSelected?: boolean }> = ({
   name,
   imgSrc,
@@ -7,8 +9,10 @@ const Item: React.FC<MenuItem & { isSelected?: boolean }> = ({
   description,
   onClick,
   variants,
-  isSelected = false,  // ← new optional prop
+  isSelected = false,
 }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <button
       onClick={onClick}
@@ -25,28 +29,34 @@ const Item: React.FC<MenuItem & { isSelected?: boolean }> = ({
         w-full
         shadow-sm
         ${isSelected 
-          ? 'border-2 border-[var(--accent)]' 
-          : 'border border-[var(--card-border)]/40'
+          ? "border-2 border-[var(--accent)]" 
+          : "border border-[var(--card-border)]/40"
         }
       `}
     >
-      {/* Image - better responsive height */}
+      {/* Image */}
       <div className="relative w-full aspect-[4/3] sm:aspect-[5/4] overflow-hidden bg-[var(--background)]">
+        {/* Skeleton loader */}
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gray-300 animate-pulse" />
+        )}
+
         <img
           src={imgSrc}
           alt={name}
+          loading="lazy"
+          onLoad={() => setImageLoaded(true)}
           className={`
             w-full h-full
             object-cover
-            transition-transform duration-700
+            transition-opacity duration-300
             group-hover:scale-105
-            flex justify-center items-center
-            text-[var(--text-secondary)]
+            ${imageLoaded ? "opacity-100" : "opacity-0"}
           `}
-          loading="lazy"
         />
       </div>
-      {/* Content - much better scaling */}
+
+      {/* Content */}
       <div className="p-4 sm:p-5 lg:p-6 flex flex-col flex-grow space-y-3 sm:space-y-4">
         {/* Name */}
         <p className="
@@ -57,7 +67,8 @@ const Item: React.FC<MenuItem & { isSelected?: boolean }> = ({
         ">
           {name}
         </p>
-        {/* Description - remove clamp on larger screens */}
+
+        {/* Description */}
         {description && (
           <p className="
             text-sm sm:text-base
@@ -68,16 +79,20 @@ const Item: React.FC<MenuItem & { isSelected?: boolean }> = ({
             {description}
           </p>
         )}
+
         {/* Price & Details */}
-        <div className={`
-          mt-auto
-          ${ (additionalPrice !== undefined || (variants && variants.length > 0)) 
-            ? 'pt-2 border-t-1 border-[var(--text-primary)]/60 space-y-2.5' 
-            : '' 
-          }
-        `}>
+        <div
+          className={`
+            mt-auto
+            ${
+              additionalPrice !== undefined || (variants && variants.length > 0)
+                ? "pt-2 border-t border-[var(--text-primary)]/60 space-y-2.5"
+                : ""
+            }
+          `}
+        >
           <div className="flex justify-between items-baseline gap-3">
-            <span className="text-sm sm:text-sm text-[var(--text-secondary)]">
+            <span className="text-sm text-[var(--text-secondary)]">
               {additionalDetails?.[0] || " "}
             </span>
             <span className="font-bold text-lg sm:text-xl text-[var(--price-main)]">
@@ -87,7 +102,7 @@ const Item: React.FC<MenuItem & { isSelected?: boolean }> = ({
 
           {additionalPrice !== undefined && (
             <div className="flex justify-between items-baseline gap-3">
-              <span className="text-sm font-bold sm:text-sm text-[var(--text-secondary)]">
+              <span className="text-sm font-bold text-[var(--text-secondary)]">
                 {additionalDetails?.[1] || " "}
               </span>
               <span className="font-bold text-base sm:text-lg text-[var(--price-secondary)]">
@@ -99,7 +114,7 @@ const Item: React.FC<MenuItem & { isSelected?: boolean }> = ({
 
         {/* Variants */}
         {variants && variants.length > 0 && (
-          <div className="flex flex-wrap gap-2 pt-3">  {/* ← pt-3 when it exists */}
+          <div className="flex flex-wrap gap-2 pt-3">
             {variants.map((variant, i) => (
               <span
                 key={i}
@@ -122,4 +137,5 @@ const Item: React.FC<MenuItem & { isSelected?: boolean }> = ({
     </button>
   );
 };
+
 export default Item;
